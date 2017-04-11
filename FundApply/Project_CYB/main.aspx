@@ -10,7 +10,7 @@
     <script src="../js/jquery-1.8.3.min.js"></script>
     <script src="../js/plug/layer/layer.js"></script>
     <link href="../css/plug/layui/css/layui.css" rel="stylesheet" /> 
-    <script src="../css/plug/layui/lay/dest/layui.all.js"></script>
+    <script src="../css/plug/layui/lay/dest/layui.all.js"></script> 
     <style type="text/css">
         body {
             overflow-x: hidden; overflow-y: hidden;
