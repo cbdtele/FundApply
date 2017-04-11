@@ -1,0 +1,142 @@
+.panel {
+  overflow: hidden;
+  text-align: left;
+  margin: 0;
+  border: 0;
+  -moz-border-radius: 0 0 0 0;
+  -webkit-border-radius: 0 0 0 0;
+  border-radius: 0 0 0 0;
+}
+.panel-header,
+.panel-body {
+  border-width: 1pX;
+  border-style: solid;
+}
+.panel-header {
+  padding: 5pX;
+  position: relative;
+}
+.panel-title {
+  background: url('images/blank.gif') no-repeat;
+}
+.panel-header-noborder {
+  border-width: 0 0 1pX 0;
+}
+.panel-body {
+  overflow: auto;
+  border-top-width: 0;
+  padding: 0;
+}
+.panel-body-noheader {
+  border-top-width: 1pX;
+}
+.panel-body-noborder {
+  border-width: 0pX;
+}
+.panel-body-nobottom {
+  border-bottom-width: 0;
+}
+.panel-with-icon {
+  padding-left: 18pX;
+}
+.panel-icon,
+.panel-tool {
+  position: absolute;
+  top: 50%;
+  margin-top: -8pX;
+  height: 16pX;
+  overflow: hidden;
+}
+.panel-icon {
+  left: 5pX;
+  width: 16pX;
+}
+.panel-tool {
+  right: 5pX;
+  width: auto;
+}
+.panel-tool a {
+  display: inline-block;
+  width: 16pX;
+  height: 16pX;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  margin: 0 0 0 2pX;
+  vertical-align: top;
+}
+.panel-tool a:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  background-color: #e2e2e2;
+  -moz-border-radius: 3pX 3pX 3pX 3pX;
+  -webkit-border-radius: 3pX 3pX 3pX 3pX;
+  border-radius: 3pX 3pX 3pX 3pX;
+}
+.panel-loading {
+  padding: 11pX 0pX 10pX 30pX;
+}
+.panel-noscroll {
+  overflow: hidden;
+}
+.panel-fit,
+.panel-fit body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
+.panel-loading {
+  background: url('images/loading.gif') no-repeat 10pX 10pX;
+}
+.panel-tool-close {
+  background: url('images/panel_tools.png') no-repeat -16pX 0pX;
+}
+.panel-tool-min {
+  background: url('images/panel_tools.png') no-repeat 0pX 0pX;
+}
+.panel-tool-max {
+  background: url('images/panel_tools.png') no-repeat 0pX -16pX;
+}
+.panel-tool-restore {
+  background: url('images/panel_tools.png') no-repeat -16pX -16pX;
+}
+.panel-tool-collapse {
+  background: url('images/panel_tools.png') no-repeat -32pX 0;
+}
+.panel-tool-expand {
+  background: url('images/panel_tools.png') no-repeat -32pX -16pX;
+}
+.panel-header,
+.panel-body {
+  border-color: #D3D3D3;
+}
+.panel-header {
+  background-color: #f3f3f3;
+  background: -webkit-linear-gradient(top,#F8F8F8 0,#eeeeee 100%);
+  background: -moz-linear-gradient(top,#F8F8F8 0,#eeeeee 100%);
+  background: -o-linear-gradient(top,#F8F8F8 0,#eeeeee 100%);
+  background: linear-gradient(to bottom,#F8F8F8 0,#eeeeee 100%);
+  background-repeat: repeat-X;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#F8F8F8,endColorstr=#eeeeee,GradientType=0);
+}
+.panel-body {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 12pX;
+}
+.panel-title {
+  font-size: 12pX;
+  font-weight: bold;
+  color: #575765;
+  height: 16pX;
+  line-height: 16pX;
+}
+.panel-footer {
+  border: 1pX solid #D3D3D3;
+  overflow: hidden;
+  background: #fafafa;
+}
+.panel-footer-noborder {
+  border-width: 1pX 0 0 0;
+}

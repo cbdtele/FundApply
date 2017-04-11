@@ -1,0 +1,11 @@
+﻿.chklist,.rdolist{display:none}
+.chkbox,.rdobox{display:inline-block;padding:5px;height:16px;line-height:16px;background:#eee;border-radius:3px;color:#666;font-family:'Microsoft YaHei'}
+.check-image{display:inline-block;width:16px;height:16px;margin-top:-4px;background:url(/js/plug/labelauty/images/input-checked.png) no-repeat;vertical-align:middle}
+.unchecked{background:#ECF0F1;color:#666;transition-property:background;transition-delay:0s;transition-duration:.1s;transition-timing-function:linear}
+.unchecked:hover{background:#dedfe0}
+.checked{background:#3498DB;color:#fff}
+.disabled{cursor:not-allowed}
+.checkboxTool{line-height:25px;font-size: 12px;margin-bottom: 5px;margin-top: 5px;}
+.checkboxTool {line-height: 30px;}
+.checkboxTool label{margin-left:3px}
+.checkboxTool input{margin-left:3px}

@@ -1,0 +1,152 @@
+﻿.report_left
+{
+    float: left;
+    width: 180px;
+    height: 520px;
+    background-image: url('../images/menu_left.jpg');
+    font-size: 12px;
+}
+.noItem
+{
+    text-align: center;
+    font-size: 12pt;
+    color: Red;
+    font-weight: bold;
+    padding-top: 5px;
+   
+}
+
+.report_left ul
+{
+    padding: 10px;
+    margin: 0px;
+    width: 170px;
+}
+.report_left ul li
+{
+    text-decoration: none;
+    list-style: none;
+    padding: 5px 0px 5px 1px;
+}
+
+.report_left ul li a
+{
+    cursor: pointer;
+    text-decoration: none;
+    color: Black;
+}
+.report_right
+{
+    float: left;
+    width: 760px;
+    margin-left: 2px;
+}
+
+.btnSearch
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    background-image: url('../images/button_chaxun.jpg');
+    width: 55px;
+    height: 25px;
+    margin-left: 5px;
+}
+.btnSearchAll
+{
+    background-image: url('../images/button_SearechAll.jpg');
+    width: 75px;
+    height: 25px;
+    border: 0px;
+    margin-left: 5px;
+}
+
+.btnSearch1
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    background-image: url('../images/button_chaxun.jpg');
+    width: 55px;
+    height: 25px;
+    margin-left: 5px;
+}
+.btnBack
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    background-image: url('../images/button_fanhui.jpg');
+    width: 55px;
+    height: 25px;
+    margin-left: 5px;
+}
+
+.btnAdd
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    background-image: url('../images/button_xinzeng-.png');
+    width: 55px;
+    height: 25px;
+    margin-left: 5px;
+}
+.btnUpdate
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    background-image: url('../images/button_xiugai.png');
+    width: 55px;
+    height: 25px;
+    margin-left: 5px;
+}
+
+.btnDel
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    background-image: url('../images/button_shanchu-.png');
+    width: 55px;
+    height: 25px;
+    margin-left: 5px;
+}
+
+.btnDisable
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    background-image: url('../images/button_jinyong-.png');
+    width: 55px;
+    height: 25px;
+    margin-left: 5px;
+}
+
+.btnConfirm
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    background-image: url('../images/button_queren-.png');
+    width: 55px;
+    height: 25px;
+    margin-left: 5px;
+}
+
+.btnChoose
+{
+    background-image: url('../images/button_options_file.png') no-repeat;
+    width: 75px;
+    height: 25px;
+    border: 0px;
+    margin-left: 5px;
+}
+.ul_common li
+{
+    text-align: center;
+    float: left;
+    list-style-type: none;
+}

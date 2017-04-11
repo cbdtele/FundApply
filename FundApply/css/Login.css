@@ -1,0 +1,48 @@
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+ 
+    background-color: #cbdeee;
+}
+.imgLogin
+{
+    width: 1000px;
+    height: 600px;
+    background: url(../images/img-01.jpg) no-repeat;
+}
+.content
+{
+    padding-left: 527px;
+    padding-top: 270px;
+}
+.input
+{
+    height: 25px;
+    outline: none;
+    border-radius: 4px;
+    width: 180px;
+    background-color: #E5E3E8;
+    border: none;
+}
+
+.btnLogin
+{
+    background-image: url(../images/img-02.jpg);
+    width: 67px;
+    height: 33px;
+    cursor: pointer;
+    border:none;
+}
+.imgLogin .bottom
+{
+
+    font-size: 12px;
+    color: #FFFFFF;
+    width:300px;
+    margin:0 auto;
+    padding-top:155px;
+}
+.imgLogin .bottom span
+{
+    margin-left: 50px;
+}

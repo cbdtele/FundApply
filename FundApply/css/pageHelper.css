@@ -1,0 +1,36 @@
+﻿.pagination li
+{
+    list-style-type: none;
+    float: left;
+}
+.pagination
+{
+    float: left;
+}
+.pagination a
+{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 2px;
+}
+
+.pagination a
+{
+    border: 1px solid #c1e6f7;
+    background: #fff;
+    padding: 2px 6px;
+    text-decoration: none;
+}
+.pagination li span font
+{
+    color: Red;
+}
+.pagination li.active a
+{
+    background: #c1e6f7;
+}
+.pagination a:hover
+{
+    background: #c1e6f7;
+    color: #fff;
+}

@@ -1,0 +1,46 @@
+﻿.left_menu
+{
+    width: 180px;
+    height: 600px;
+    border: 1px;
+    background-color: #f0f9fd;
+    float: left;
+}
+.left_menu ul
+{
+    width: 180px;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 10px;
+}
+.left_menu ul li
+{
+    font-size: 12px;
+    padding-left: 20px;
+    height: 25px;
+    line-height: 25px;
+}
+.left_menu ul li
+{
+    width: 100%;
+}
+.cite
+{
+    background: url(../images/list3.png) no-repeat;
+    width: 2px;
+    height: 3px;
+    float: left;
+    margin-top: 10px;
+    margin-right:5px;
+}
+.left_menu ul  .active
+{
+
+    background: url(../images/libg2.png) no-repeat;
+}
+.content
+{
+    float: left;
+    width: 950px;
+    margin-left: 10px;
+}

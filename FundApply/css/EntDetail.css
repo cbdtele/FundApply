@@ -1,0 +1,90 @@
+﻿.nTab
+{
+    background-color: Transparent;
+    background-position: left;
+    background-repeat: repeat-y;
+    margin-bottom: 2px;
+    width: 99%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+}
+.nTab .TabTitle
+{
+    clear: both;
+    height: 30px;
+    overflow: hidden;
+    margin-bottom: 3px;
+    border-bottom: 1px #AACCEE solid;
+}
+.nTab .TabTitle ul
+{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+.nTab .TabTitle li
+{
+    text-align: center;
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 2px 4px;
+    list-style-type: none;
+}
+.nTab .TabTitle li a
+{
+    text-decoration: none;
+    color: Black;
+}
+.nTab .TabTitle .active
+{
+    background: #AACCEE;
+    border: 1px #AACCEE solid;
+}
+.nTab .TabTitle .normal
+{
+    background: #fff;
+    border: 1px #AACCEE solid;
+}
+.divActive
+{
+    display: block;
+}
+.divNormal
+{
+    display: none;
+}
+
+
+.tbcssg
+{
+
+    border-collapse: collapse;
+}
+.tbcssg td
+{
+    border: 1px solid #DADADA;
+    border-collapse: collapse;
+    height: 33px;
+    font-size:12px;
+}
+
+.align_center
+{
+    text-align: center;
+}
+.align_right
+{
+    text-align: right;
+}
+.tr1
+{
+    background: #F0F0F0;
+}
+.tr2
+{
+    background: #fff;
+}

@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2B609DF0-AFA4-45DF-871D-0636B5A510C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cydb.Repository</RootNamespace>
+    <AssemblyName>FundApply.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.40.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.42\lib\net40\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\ISqlBaseOperation.cs" />
+    <Compile Include="Base\SqlBaseOperation.cs" />
+    <Compile Include="Base\SqlMapper.cs" />
+    <Compile Include="Entity\BaseTablePaging.cs" />
+    <Compile Include="Entity\EnumStrategy.cs" />
+    <Compile Include="Entity\EnumTargetField.cs" />
+    <Compile Include="Entity\NdicListEntity.cs" />
+    <Compile Include="Entity\SqlBuildSubQuery.cs" />
+    <Compile Include="Entity\TtimeEntityOut.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CommonRepository.cs" />
+    <Compile Include="Repository\CyryRepository.cs" />
+    <Compile Include="Repository\EnterpriseRepository.cs" />
+    <Compile Include="Entity\EntFactoryEntity.cs" />
+    <Compile Include="Repository\EntRankFactory\FieldType\EntRankFieldTypeBase.cs" />
+    <Compile Include="Repository\EntRankFactory\EntRankFactory.cs" />
+    <Compile Include="Repository\EntRankFactory\EntRankFactoryBase.cs" />
+    <Compile Include="Repository\EntRankFactory\FieldType\EntRankFieldTypeCyry.cs" />
+    <Compile Include="Repository\EntRankFactory\FieldType\EntRankFieldTypeGdp.cs" />
+    <Compile Include="Repository\EntRankFactory\FieldType\EntRankFieldTypeLrze.cs" />
+    <Compile Include="Repository\EntRankFactory\FieldType\EntRankFieldTypeNh.cs" />
+    <Compile Include="Repository\EntRankFactory\FieldType\EntRankFieldTypeQjsr.cs" />
+    <Compile Include="Repository\EntRankFactory\FieldType\EntRankFieldTypeSh.cs" />
+    <Compile Include="Repository\EntRankFactory\FieldType\EntRankFieldTypeTax.cs" />
+    <Compile Include="Repository\EntRankFactory\FieldType\EntRankFieldTypeYysr.cs" />
+    <Compile Include="Repository\EntRankFactory\FieldType\EntRankFieldTypeZczj.cs" />
+    <Compile Include="Repository\EntRankingRepository.cs" />
+    <Compile Include="Repository\EntZczbChangeRepository.cs" />
+    <Compile Include="Repository\EntZdgzFactory\EntZdgzFactory.cs" />
+    <Compile Include="Repository\EntZdgzFactory\EntZdgzFactoryBase.cs" />
+    <Compile Include="Repository\EntZdgzFactory\FieldType\EntZdgzFieldBase.cs" />
+    <Compile Include="Repository\EntZdgzFactory\FieldType\EntZdgzFieldTypeCyry.cs" />
+    <Compile Include="Repository\EntZdgzFactory\FieldType\EntZdgzFieldTypeGdp.cs" />
+    <Compile Include="Repository\EntZdgzFactory\FieldType\EntZdgzFieldTypeLrze.cs" />
+    <Compile Include="Repository\EntZdgzFactory\FieldType\EntZdgzFieldTypeNh.cs" />
+    <Compile Include="Repository\EntZdgzFactory\FieldType\EntZdgzFieldTypeQjsr.cs" />
+    <Compile Include="Repository\EntZdgzFactory\FieldType\EntZdgzFieldTypeSh.cs" />
+    <Compile Include="Repository\EntZdgzFactory\FieldType\EntZdgzFieldTypeTax.cs" />
+    <Compile Include="Repository\EntZdgzFactory\FieldType\EntZdgzFieldTypeYysr.cs" />
+    <Compile Include="Repository\EntZdgzFactory\FieldType\EntZdgzFieldTypeZczj.cs" />
+    <Compile Include="Repository\EntZdgzRepository.cs" />
+    <Compile Include="Repository\GdpRepository.cs" />
+    <Compile Include="Repository\ICyryRepository.cs" />
+    <Compile Include="Repository\IEntRankingRepository.cs" />
+    <Compile Include="Repository\IEntZczbChangeRepository.cs" />
+    <Compile Include="Repository\IEntZdgzRepository.cs" />
+    <Compile Include="Repository\IGdpRepository.cs" />
+    <Compile Include="Repository\ILrzeRepository.cs" />
+    <Compile Include="Repository\INhRepository.cs" />
+    <Compile Include="Repository\IOneTwoThreeIndustryRepository.cs" />
+    <Compile Include="Repository\IShRepository.cs" />
+    <Compile Include="Repository\ITargetFieldRepository.cs" />
+    <Compile Include="Repository\ITaxQjsrHighchangeRepository.cs" />
+    <Compile Include="Repository\IYysrRepository.cs" />
+    <Compile Include="Repository\IZczjRepository.cs" />
+    <Compile Include="Repository\LrzeRepository.cs" />
+    <Compile Include="Repository\NdicListRepository.cs" />
+    <Compile Include="Repository\NhRepository.cs" />
+    <Compile Include="Repository\OneTwoThreeIndustryRepository.cs" />
+    <Compile Include="Repository\ShRepository.cs" />
+    <Compile Include="Repository\TargetFieldRepository.cs" />
+    <Compile Include="Repository\TaxQjsrHighchangeRepository.cs" />
+    <Compile Include="Repository\YysrRepository.cs" />
+    <Compile Include="Repository\ZczjRepository.cs" />
+    <Compile Include="UserControl\EnterpriseTypeRepository.cs" />
+    <Compile Include="UserControl\IndustryRepository.cs" />
+    <Compile Include="UserControl\IndustrySmallRepository.cs" />
+    <Compile Include="UserControl\Base\IUserControlBase.cs" />
+    <Compile Include="UserControl\RegionRepository.cs" />
+    <Compile Include="UserControl\TimeUserControl\Algorithm\AlgorithMonthlyCyry.cs" />
+    <Compile Include="UserControl\TimeUserControl\Algorithm\AlgorithMonthlyGdp.cs" />
+    <Compile Include="UserControl\TimeUserControl\Algorithm\AlgorithMonthlyGdzc.cs" />
+    <Compile Include="UserControl\TimeUserControl\Algorithm\AlgorithMonthlyLrze.cs" />
+    <Compile Include="UserControl\TimeUserControl\Algorithm\AlgorithMonthlyNh.cs" />
+    <Compile Include="UserControl\TimeUserControl\Algorithm\AlgorithMonthlyPl.cs" />
+    <Compile Include="UserControl\TimeUserControl\Algorithm\AlgorithMonthlyQjsr.cs" />
+    <Compile Include="UserControl\TimeUserControl\Algorithm\AlgorithMonthlySh.cs" />
+    <Compile Include="UserControl\TimeUserControl\Algorithm\AlgorithMonthlyTax.cs" />
+    <Compile Include="UserControl\TimeUserControl\Algorithm\AlgorithMonthlyYysr.cs" />
+    <Compile Include="UserControl\TimeUserControl\Algorithm\AlgorithMonthlyZczj.cs" />
+    <Compile Include="UserControl\TimeUserControl\BaseTime\ITimeUserBuild.cs" />
+    <Compile Include="UserControl\TimeUserControl\BaseTime\TimeUserBuild.cs" />
+    <Compile Include="UserControl\TimeUserControl\BaseTime\TimeUserBuildNormalByGdzc.cs" />
+    <Compile Include="UserControl\TimeUserControl\BaseTime\TimeUserBuildNormalByPl.cs" />
+    <Compile Include="UserControl\TimeUserControl\BaseTime\TimeUserBuildQuarter.cs" />
+    <Compile Include="UserControl\TimeUserControl\BaseTime\TimeUserBuildYear.cs" />
+    <Compile Include="UserControl\TimeUserControl\Algorithm\Strategy.cs" />
+    <Compile Include="UserControl\TimeUserControl\BaseTime\TimeUserBuildCumulative.cs" />
+    <Compile Include="UserControl\TimeUserControl\BaseTime\TimeUserBuildNormal.cs" />
+    <Compile Include="UserControl\TimeUserControl\ITimeUserControlContext.cs" />
+    <Compile Include="UserControl\TimeUserControl\TimeUserBuildFactory.cs" />
+    <Compile Include="UserControl\TimeUserControl\TimeUserControlContext.cs" />
+    <Compile Include="Entity\TtimeEntity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
