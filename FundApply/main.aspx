@@ -32,3 +32,6 @@
     <frame src="HtmlPage.html"></frame>  
 </frameset>
 </html>
+<script type="text/javascript">
+    //我只是一个小测试
+</script>
