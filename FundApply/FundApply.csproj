@@ -2150,6 +2150,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="db\" />
     <Folder Include="js\plug\layer\mobile\" />
     <Folder Include="js\plug\layer\skin\" />
   </ItemGroup>
