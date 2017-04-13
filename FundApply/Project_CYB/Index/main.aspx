@@ -209,7 +209,7 @@
             shadeClose: true,
             shade: false,
             //maxmin: true, //开启最大化最小化按钮
-            area: ['360px', '180px'],
+            area: ['360px', '200px'],
             content: 'EditApplyTime.aspx',
             yes: function (index, layero) {
                 layer.close(index);
