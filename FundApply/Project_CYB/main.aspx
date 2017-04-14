@@ -28,20 +28,25 @@
             <div style="position:fixed; width:100%;height:40px;background-color:#e8ecf4;">
             <ul class="layui-tab-title" style="padding-right:20px;">
                 <li style="background-color:#fff">首页</li>
+                <li>公告管理</li>
                 <li>数据导入</li>
                 <li>修改密码</li>
             </ul>
             </div>
             <div class="layui-tab-content">
-                <%--内容一--%>
+                <%--内容1--%>
                 <div class="layui-tab-item layui-show">
                      <iframe src="Index/main.aspx" style=" border: none; width: 100%; height: 500px;margin:40px 10px 10px 10px;"></iframe>
                 </div>
-                <%--内容2--%>
+                 <%--内容2--%>
+                <div class="layui-tab-item">
+                    <iframe src="Notice/main.aspx" style="border: none; width: 100%; height: 500px;margin:40px 10px 10px 10px;"></iframe>
+                </div>
+                <%--内容3--%>
                 <div class="layui-tab-item dvlayui">
                      <iframe src="DataReport/main.aspx" style=" border: none; width: 100%; height: 500px;margin:40px 10px 10px 10px;"></iframe>
                 </div>
-                <%--内容3--%>
+                <%--内容4--%>
                 <div class="layui-tab-item dvlayui">
                      <iframe src="Account/main.aspx" style=" border: none; width: 100%; height: 500px;margin:40px 10px 10px 10px;"></iframe>
                 </div>

@@ -48,7 +48,7 @@
             </fieldset>
             <label class="layui-form-label">组织机构代码 </label>
             <div class="layui-input-block">
-                <input name="title" lay-verify="title" autocomplete="off" class="layui-input" value="FDFGDFDDFVC4654" />
+                <input name="title" lay-verify="title" autocomplete="off" class="layui-input" value="694968736" />
                 <%--<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入组织机构代码/统一社会信用代码" class="layui-input">--%>
             </div>
             <label class="layui-form-label">单位名称</label>

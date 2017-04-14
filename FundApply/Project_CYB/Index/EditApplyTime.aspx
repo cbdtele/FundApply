@@ -32,20 +32,32 @@
 <body>
     <form>
         <div style="margin:20px 40px 20px 40px">
-        <table>
+         <table>
+            <tr>
+                <td>年份：</td>
+                <td>
+                    <select>
+                        <option value="value">2017</option>
+                        <option value="value">2016</option>
+                    </select>
+                    <input type="text" value="上半年" style="width:100px;"/></td>
+            </tr>
             <tr>
                 <td>申报开始时间：</td>
                 <td>
                     <input type="text" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})" /></td>
             </tr>
             <tr>
-                <td>申报结束时间</td>
+                <td>申报结束时间：</td>
                 <td>
-                    <input type="text" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})" /></td>
+                     <input type="text" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})" />
+                  <%--  <input id="dateI" type="text" class="Wdate" />  <input id="input1"/> <input  id="input2"/>--%>
+
+                </td>
             </tr>
             <tr style="height: 60px; width: 300px;">
                 <td colspan="2" style="text-align: center;">
-                    <button class="button button-primary button-pill button-tiny" type="button" onclick="Submit()">修改</button>
+                    <button class="button button-primary button-pill button-tiny" type="button" onclick="Submit()">添加</button>
                     <button class="button button-primary button-pill button-tiny" type="button" onclick="Close()">取消</button>
                 </td>
             </tr>
@@ -55,6 +67,21 @@
 </body>
 </html>
 <script type="text/javascript">
+    //$("#dateI").focus(function () {
+    //    WdatePicker({
+    //        isShowWeek:true,
+    //        dateFmt: 'yyyy-MM-dd',
+    //        firstDayOfWeek:0,
+    //        readOnly: true,
+    //        onpicked: function () {
+    //            $('#input1').val($dp.cal.getP('W', 'W'));
+    //            $('#input2').val($dp.cal.getP('W', 'WW'));
+    //        },
+    //        isShowClear: false,
+    //        isShowToday:false
+
+    //    });
+    //});
 
     function Close() {
         parent.layer.closeAll();
