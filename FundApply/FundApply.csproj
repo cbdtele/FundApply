@@ -192,6 +192,10 @@
     <Content Include="css\plug\ns-style-other.css" />
     <Content Include="css\select.css" />
     <Content Include="css\style.css" />
+    <Content Include="db\FundApplyDB.mdf" />
+    <Content Include="db\FundApplyDB_log.ldf">
+      <DependentUpon>FundApplyDB.mdf</DependentUpon>
+    </Content>
     <Content Include="easyui\datagrid-dnd.js" />
     <Content Include="easyui\demo\demo.css" />
     <Content Include="easyui\easyloader.js" />
@@ -2170,7 +2174,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="db\" />
     <Folder Include="js\plug\layer\mobile\" />
     <Folder Include="js\plug\layer\skin\" />
   </ItemGroup>
