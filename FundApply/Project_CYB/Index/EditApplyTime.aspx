@@ -50,7 +50,10 @@
             <tr>
                 <td>申报结束时间：</td>
                 <td>
-                    <input type="text" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})" /></td>
+                     <input type="text" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})" />
+                  <%--  <input id="dateI" type="text" class="Wdate" />  <input id="input1"/> <input  id="input2"/>--%>
+
+                </td>
             </tr>
             <tr style="height: 60px; width: 300px;">
                 <td colspan="2" style="text-align: center;">
@@ -64,6 +67,21 @@
 </body>
 </html>
 <script type="text/javascript">
+    //$("#dateI").focus(function () {
+    //    WdatePicker({
+    //        isShowWeek:true,
+    //        dateFmt: 'yyyy-MM-dd',
+    //        firstDayOfWeek:0,
+    //        readOnly: true,
+    //        onpicked: function () {
+    //            $('#input1').val($dp.cal.getP('W', 'W'));
+    //            $('#input2').val($dp.cal.getP('W', 'WW'));
+    //        },
+    //        isShowClear: false,
+    //        isShowToday:false
+
+    //    });
+    //});
 
     function Close() {
         parent.layer.closeAll();

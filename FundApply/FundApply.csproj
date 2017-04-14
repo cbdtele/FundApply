@@ -1557,6 +1557,10 @@
     <Content Include="Project_CYB\DataReport\main.aspx" />
     <Content Include="Project_CYB\Index\EditApplyTime.aspx" />
     <Content Include="Project_CYB\Index\main.aspx" />
+    <Content Include="Project_CYB\Notice\AddNotice.aspx" />
+    <Content Include="Project_CYB\Notice\EditNotice.aspx" />
+    <Content Include="Project_CYB\Notice\main.aspx" />
+    <Content Include="Project_CYB\Notice\NoticeDetails.aspx" />
     <Content Include="Project_CYB\parentmain.aspx" />
     <Content Include="Project_CYB\Index\SBQK\ApplyProject.aspx" />
     <Content Include="Project_CYB\Index\LXSH\ReturnModification\ApplyProject.aspx" />
@@ -1744,6 +1748,22 @@
     </Compile>
     <Compile Include="Project_CYB\Index\main.aspx.designer.cs">
       <DependentUpon>main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Project_CYB\Notice\AddNotice.aspx.cs">
+      <DependentUpon>AddNotice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Project_CYB\Notice\EditNotice.aspx.cs">
+      <DependentUpon>EditNotice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Project_CYB\Notice\main.aspx.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Project_CYB\Notice\NoticeDetails.aspx.cs">
+      <DependentUpon>NoticeDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Project_CYB\parentmain.aspx.cs">
       <DependentUpon>parentmain.aspx</DependentUpon>

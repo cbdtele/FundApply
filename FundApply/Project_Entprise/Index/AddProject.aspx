@@ -8,6 +8,7 @@
     <title></title>
     <link href="../../css/style.css" rel="stylesheet" />
     <link href="../../css/buttons.css" rel="stylesheet" />
+    <script src="../../js/jquery-1.8.3.min.js"></script>
     <script src="../../js/plug/layer/layer.js"></script>
     <script src="../../css/plug/layui/layui.js"></script>
     <link href="../../css/plug/layui/css/layui.css" rel="stylesheet" />
@@ -40,7 +41,7 @@
             </fieldset>
             <label class="layui-form-label">组织机构代码 </label>
             <div class="layui-input-block">
-                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入组织机构代码/统一社会信用代码" class="layui-input">
+                <input type="text" name="title"  lay-verify="required" lay-verify="title" autocomplete="off" placeholder="请输入组织机构代码/统一社会信用代码" class="layui-input">
             </div>
 
             <label class="layui-form-label">单位名称</label>
@@ -150,8 +151,6 @@
     </div>
 </body>
 </html>
-
-
 <script type="text/javascript">
 
     layui.use('upload', function () {
@@ -185,7 +184,7 @@
 
         //创建一个编辑器
         var editIndex = layedit.build('LAY_demo_editor');
-
+        alert(2);
         //自定义验证规则
         form.verify({
             title: function (value) {
