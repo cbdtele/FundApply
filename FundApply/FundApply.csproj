@@ -196,7 +196,6 @@
     <Content Include="db\FundApplyDB_log.ldf">
       <DependentUpon>FundApplyDB.mdf</DependentUpon>
     </Content>
-    <Content Include="db\WebForm1.aspx" />
     <Content Include="easyui\datagrid-dnd.js" />
     <Content Include="easyui\demo\demo.css" />
     <Content Include="easyui\easyloader.js" />
@@ -1628,13 +1627,6 @@
   <ItemGroup>
     <Compile Include="ashx\upload.ashx.cs">
       <DependentUpon>upload.ashx</DependentUpon>
-    </Compile>
-    <Compile Include="db\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="db\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="InformationManager\Policy\EditPolicy.aspx.cs">
       <DependentUpon>EditPolicy.aspx</DependentUpon>
