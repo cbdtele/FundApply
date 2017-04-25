@@ -90,7 +90,7 @@
             columns: [[
                         { field: 'captialok', title: '已申请资金', align: 'right', width: 80 },
                         { field: 'status', title: '审核状态', align: 'left', width: 80 },
-                        { field: 'captial', title: '审核资金', align: 'right', width: 80 },
+                        { field: 'captial', title: '支持资金', align: 'right', width: 80 },
                         { field: 'applytime', title: '审核时间', align: 'left', width: 80 },
                         { field: 'yysr', title: '上年营业收入', align: 'right', width: 80 },
                         { field: 'tax', title: '上年税收数额', align: 'right', width: 80 },
@@ -101,16 +101,7 @@
             data: {
                 "total": 10, "rows":
                 [
-                    //{ "applytype": "金融资金", "natorgcode": "MA0014BR4", "orgname": "", "captialok": 200.00, "status": "已审核", "yysr": 1000, "tax": 500, "industry": "金融业" },
-                    //{ "applytype": "金融资金", "natorgcode": "MA001DEU2", "orgname": "", "captialok": 200.00, "status": "待审核", "yysr": 1000, "tax": 500, "industry": "金融业" },
-                    { "applytype": "金融资金<label style='color:red;'>*</label>", "natorgcode": "556849245", "orgname": "", "captialok": 200.00, "status": "退回修改", "yysr": 1000, "tax": 500, "industry": "金融业" },
-                    //{ "applytype": "金融资金", "natorgcode": "694968736", "orgname": "", "captialok": 200.00, "status": "已审核", "yysr": 1000, "tax": 500, "industry": "金融业" },
-                    //{ "applytype": "金融资金", "natorgcode": "761449531", "orgname": "", "captialok": 200.00, "status": "已审核", "yysr": 1000, "tax": 500, "industry": "金融业" },
-                    //{ "applytype": "金融资金", "natorgcode": "MA0014BR4", "orgname": "", "captialok": 200.00, "status": "已审核", "yysr": 1000, "tax": 500, "industry": "金融业" },
-                    //{ "applytype": "金融资金", "natorgcode": "MA001DEU2", "orgname": "", "captialok": 200.00, "status": "已审核", "yysr": 1000, "tax": 500, "industry": "金融业" },
-                    //{ "applytype": "金融资金", "natorgcode": "556849245", "orgname": "", "captialok": 200.00, "status": "已审核", "yysr": 1000, "tax": 500, "industry": "金融业" },
-                    //{ "applytype": "金融资金", "natorgcode": "694968736", "orgname": "", "captialok": 200.00, "status": "已审核", "yysr": 1000, "tax": 500, "industry": "金融业" },
-                    //{ "applytype": "金融资金", "natorgcode": "761449531", "orgname": "", "captialok": 200.00, "status": "已审核", "yysr": 1000, "tax": 500, "industry": "金融业" }
+                                      { "applytype": "金融资金", "natorgcode": "MA001DEU2", "orgname": "北京商务中心区通信科技有限公司", "captialok": 200.00, "status": "退回修改", "yysr": 1000, "tax": 500, "industry": "金融业" }
                 ]
             },
             onClickRow: function (index, row) {

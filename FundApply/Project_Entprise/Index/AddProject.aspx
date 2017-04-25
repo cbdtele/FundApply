@@ -8,18 +8,18 @@
     <title></title>
     <link href="../../css/style.css" rel="stylesheet" />
     <link href="../../css/buttons.css" rel="stylesheet" />
+    <link href="../../css/plug/layui/css/layui.css" rel="stylesheet" />
     <script src="../../js/jquery-1.8.3.min.js"></script>
     <script src="../../js/plug/layer/layer.js"></script>
+    <script src="../../css/plug/layui/lay/dest/layui.all.js"></script>
     <script src="../../css/plug/layui/layui.js"></script>
-    <link href="../../css/plug/layui/css/layui.css" rel="stylesheet" />
-
     <style>
         label {
             font-size: 14px;
         }
 
         .layui-form-label {
-            width: 100px;
+            width: 150px;
         }
 
         .layui-input-block {
@@ -29,152 +29,131 @@
 
         .layui-form-item {
             margin-bottom: 0px;
-            /*clear: both;*/
+        }
+
+        .layui-input, .layui-textarea {
+            width: 80%;
         }
     </style>
 </head>
 <body>
-    <div style="padding: 2px 100px 5px 100px">
-        <form class="layui-form" action="">
-            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-                <legend>基本信息</legend>
-            </fieldset>
-            <label class="layui-form-label">组织机构代码 </label>
-            <div class="layui-input-block">
-                <input type="text" name="title"  lay-verify="required" lay-verify="title" autocomplete="off" placeholder="请输入组织机构代码/统一社会信用代码" class="layui-input">
-            </div>
-
-            <label class="layui-form-label">单位名称</label>
-            <div class="layui-input-block">
-                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入单位名称" class="layui-input">
-            </div>
-            <label class="layui-form-label">所属行业</label>
-            <div class="layui-input-block">
-                <select name="interest" lay-filter="aihao">
-                    <option value="3" selected="">请选择行业</option>
-                    <option value="0">金融业</option>
-                    <option value="1">批发和零售业</option>
-                    <option value="2">房地产业</option>
-                </select>
-            </div>
-            <label class="layui-form-label">上年营业收入</label>
-            <div class="layui-input-block">
-                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入上年营业收入" class="layui-input">
-            </div>
-            <label class="layui-form-label">上年税收总额</label>
-            <div class="layui-input-block">
-                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入上年税收总额" class="layui-input">
-            </div>
-            <label class="layui-form-label">员工人数</label>
-            <div class="layui-input-block">
-                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入员工人数" class="layui-input">
-            </div>
-            <label class="layui-form-label">注册地址</label>
-            <div class="layui-input-block">
-                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入注册地址" class="layui-input">
-            </div>
-            <label class="layui-form-label">经营地址</label>
-            <div class="layui-input-block">
-                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入经营地址" class="layui-input">
-            </div>
-
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">申请类型</label>
-                <div class="layui-input-inline">
-                    <select name="quiz1">
-                        <option value="0" selected="">请选择产业</option>
-                        <option value="1">金融业</option>
-                        <option value="2">文化创意产业</option>
-                        <option value="3">高新技术产业</option>
-                        <option value="4">高新技术产业（信息服务业）</option>
-                        <option value="5">总部经济及服务业</option>
-                        <option value="6">中小企业发展</option>
-                        <option value="7">企业上市</option>
-                    </select>
-                </div>
-                <div class="layui-input-inline">
-                    <select name="quiz2">
-                        <option value="0" selected="">请选择</option>
-                        <option value="1">房屋补贴</option>
-                        <option value="2">一次性入住</option>
-                        <option value="3">区级收入贡献</option>
-                    </select>
-                </div>
-            </div>
-            <label class="layui-form-label">申请资金</label>
-            <div class="layui-input-block">
-                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入申请资金" class="layui-input">
-            </div>
-            <label class="layui-form-label">申报材料</label>
-            <div class="layui-input-block">
-                <input type="file" name="file" class="layui-upload-file" lay-title="上传文件">
-            </div>
-
-            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-                <legend>项目联系人</legend>
-            </fieldset>
-            <div class="layui-form-item">
-                <div class="layui-inline">
-                    <label class="layui-form-label">姓名</label>
-                    <div class="layui-input-inline">
-                        <input type="tel" name="phone" lay-verify="phone" autocomplete="off" placeholder="请输入姓名" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-inline">
-                    <label class="layui-form-label">职位</label>
-                    <div class="layui-input-inline">
-                        <input type="text" name="email" lay-verify="email" autocomplete="off" placeholder="请输入职位" class="layui-input">
-                    </div>
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <div class="layui-inline">
-                    <label class="layui-form-label">手机</label>
-                    <div class="layui-input-inline">
-                        <input type="tel" name="phone" lay-verify="phone" autocomplete="off" placeholder="请输入手机" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-inline">
-                    <label class="layui-form-label">邮箱</label>
-                    <div class="layui-input-inline">
-                        <input type="text" name="email" lay-verify="email" autocomplete="off" placeholder="请输入邮箱" class="layui-input">
-                    </div>
-                </div>
-            </div>
-        </form>
-
-        <div style="text-align: center; padding: 5px">
-            <button class="button button-primary button-pill button-tiny" type="button" onclick="Submit()">申报</button>
-            <button class="button button-primary button-pill button-tiny" type="button" onclick="Close();">取消</button>
+    <form class="layui-form" runat="server">
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+            <legend>基本信息</legend>
+        </fieldset>
+        <label class="layui-form-label">组织机构代码 </label>
+        <div class="layui-input-block">
+            <input type="text" name="Nat_Org_Code" lay-verify="Nat_Org_Code" autocomplete="off" placeholder="请输入组织机构代码/统一社会信用代码" class="layui-input" id="txtNat_Org_Code" runat="server" readonly="readonly" />
         </div>
-    </div>
+        <label class="layui-form-label">单位名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="Company" lay-verify="Company" autocomplete="off" placeholder="请输入单位名称" class="layui-input" id="txtCompany" runat="server" readonly="readonly" />
+        </div>
+        <label class="layui-form-label">所属行业</label>
+        <div class="layui-input-block">
+            <asp:DropDownList name="IndustryId" lay-verify="IndustryId" ID="drpIndustryId" runat="server">
+            </asp:DropDownList>
+        </div>
+        <label class="layui-form-label">上年营业收入</label>
+        <div class="layui-input-block">
+            <input type="text" name="YYSR" lay-verify="YYSR" autocomplete="off" placeholder="请输入上年营业收入" class="layui-input" id="txtYYSR" runat="server" />
+        </div>
+        <label class="layui-form-label">上年税收总额</label>
+        <div class="layui-input-block">
+            <input type="text" name="TAX" lay-verify="TAX" autocomplete="off" placeholder="请输入上年税收总额" class="layui-input" id="txtTAX" runat="server" />
+        </div>
+        <label class="layui-form-label">员工人数</label>
+        <div class="layui-input-block">
+            <input type="text" name="Employee" lay-verify="Employee" autocomplete="off" placeholder="请输入员工人数" class="layui-input" id="txtEmployee" runat="server" />
+        </div>
+        <label class="layui-form-label">注册地址</label>
+        <div class="layui-input-block">
+            <input type="text" name="RegAddress" lay-verify="RegAddress" autocomplete="off" placeholder="请输入注册地址" class="layui-input" id="txtRegAddress" runat="server" />
+        </div>
+        <label class="layui-form-label">经营地址</label>
+        <div class="layui-input-block">
+            <input type="text" name="BusinessAddress" lay-verify="BusinessAddress" autocomplete="off" placeholder="请输入经营地址" class="layui-input" id="txtBusinessAddress" runat="server" />
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">申请类型</label>
+            <div class="layui-input-inline">
+                <select id="dl1" onchange="GetCity(this.value)">
+                </select>
+                <select id="dl2">
+                </select>
+                <asp:DropDownList name="IndustryId" lay-verify="IndustryId" ID="drpApplyTypeBig" runat="server">
+                </asp:DropDownList>
+            </div>
+            <div class="layui-input-inline">
+
+                <asp:DropDownList name="IndustryId" lay-verify="IndustryId" ID="drpApplyTypeSmall" runat="server">
+                </asp:DropDownList>
+            </div>
+        </div>
+        <label class="layui-form-label">申请资金</label>
+        <div class="layui-input-block">
+            <input type="text" name="ApplyFund" lay-verify="ApplyFund" autocomplete="off" placeholder="请输入申请资金" class="layui-input" id="txtApplyFund" runat="server" />
+        </div>
+
+        <label class="layui-form-label">申报表</label>
+        <div class="layui-input-block">
+            <asp:FileUpload runat="server" ID="FileUpload1" />
+            <button class="button button-primary button-pill button-tiny" type="button" onclick="Submit()">上传申报表</button>
+            <button class="button button-primary button-pill button-tiny" type="button" onclick="Submit()">下载申报表模板</button>
+            <%--<input type="text" name="ApplyFund" lay-verify="ApplyFund" autocomplete="off" placeholder="请输入申请资金" class="layui-input" id="Text1" runat="server" />--%>
+        </div>
+        <label class="layui-form-label">其他申报材料</label>
+        <div class="layui-input-block">
+            <asp:FileUpload runat="server" ID="txtAttachment" />
+            <button class="button button-primary button-pill button-tiny" type="button" onclick="Submit()">上传申报表</button>
+            <%--<input type="file" name="Attachment" lay-verify="Attachment" class="layui-upload-file" lay-title="上传文件" id="txtAttachment" runat="server" />--%>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">备注</label>
+            <div class="layui-input-block">
+                <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+            <legend>项目联系人</legend>
+        </fieldset>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">姓名</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="ProjectLinkMan" lay-verify="ProjectLinkMan" autocomplete="off" placeholder="请输入姓名" class="layui-input" id="txtProjectLinkMan" runat="server" />
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">职位</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="ProjectPosition" lay-verify="ProjectPosition" autocomplete="off" placeholder="请输入职位" class="layui-input" id="txtProjectPosition" runat="server" />
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">手机</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="ProjectMobilPhone" lay-verify="phone" autocomplete="off" placeholder="请输入手机" class="layui-input" id="txtProjectMobilPhone" runat="server" />
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="ProjectEmail" lay-verify="email" autocomplete="off" placeholder="请输入邮箱" class="layui-input" id="txtProjectEmail" runat="server" />
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; padding: 5px">
+            <asp:Button class="button button-primary button-pill button-tiny" lay-submit="" lay-filter="demo1" Text="申报" runat="server" ID="btnSubmit" OnClick="btnSubmit_Click" OnClientClick="Submit();" />
+            <%--        <button class="button button-primary button-pill button-tiny" lay-submit="" lay-filter="demo1" type="button"  onclick="Submit()">申报</button>--%>
+            <button class="button button-primary button-pill button-tiny" type="button" onclick="javascript:parent.layer.closeAll();">取消</button>
+        </div>
+    </form>
 </body>
 </html>
 <script type="text/javascript">
-
-    layui.use('upload', function () {
-        layui.upload({
-            url: '' //上传接口
-          , success: function (res) { //上传成功后的回调
-              console.log(res)
-          }
-        });
-
-        layui.upload({
-            url: '/test/upload.json'
-          , elem: '#test' //指定原始元素，默认直接查找class="layui-upload-file"
-          , method: 'get' //上传接口的http类型
-          , success: function (res) {
-              LAY_demo_upload.src = res.url;
-          }
-        });
-    });
-
-
-    function Close() {
-        parent.layer.closeAll();
-    }
 
     layui.use(['form', 'layedit', 'laydate'], function () {
         var form = layui.form()
@@ -182,41 +161,46 @@
         , layedit = layui.layedit
         , laydate = layui.laydate;
 
-        //创建一个编辑器
-        var editIndex = layedit.build('LAY_demo_editor');
-        alert(2);
         //自定义验证规则
         form.verify({
-            title: function (value) {
-                if (value.length < 5) {
-                    return '标题至少得5个字符啊';
+
+            Nat_Org_Code: function (value) {
+                if (value.length <= 0) {
+                    return '请输入组织机构代码';
+                }
+            },
+            Company: function (value) {
+                if (value.length <= 0) {
+                    return '请输入单位名称';
+                }
+            },
+            YYSR: [/^[1-9]{0,7}.\d{0,2}$/, '请输入上年营业收入'],
+            TAX: [/^[1-9]{0,7}.\d{0,2}$/, '请输入上年税收总额'],
+            Employee: [/^\d+$/, '请输入员工人数'],
+            RegAddress: function (value) {
+                if (value.length <= 0) {
+                    return '请输入注册地址';
+                }
+            },
+            BusinessAddress: function (value) {
+                if (value.length <= 0) {
+                    return '请输入经营地址';
+                }
+            },
+            ApplyFund: [/^[1-9]{0,7}.\d{0,2}$/, '请输入申请资金'],
+            //Attachment: function (value) {},
+            ProjectLinkMan: function (value) {
+                if (value.length <= 0) {
+                    return '请输入姓名';
+                }
+            },
+            ProjectPosition: function (value) {
+                if (value.length <= 0) {
+                    return '请输入职位';
                 }
             }
-          , pass: [/(.+){6,12}$/, '密码必须6到12位']
-          , content: function (value) {
-              layedit.sync(editIndex);
-          }
         });
-
-        //监听指定开关
-        form.on('switch(switchTest)', function (data) {
-            layer.msg('开关checked：' + (this.checked ? 'true' : 'false'), {
-                offset: '6px'
-            });
-            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
-        });
-
-        //监听提交
-        form.on('submit(demo1)', function (data) {
-            layer.alert(JSON.stringify(data.field), {
-                title: '最终的提交信息'
-            })
-            return false;
-        });
-
-
     });
-
 
     function Submit() {
         //询问框
@@ -227,6 +211,49 @@
                 parent.layer.closeAll();
             });
         }, function () {
+        });
+    }
+
+    //二级联动
+
+
+
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        InitData(0);
+    });
+    function InitData(n) {
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "../../ashx/ApplyProjectDrp.ashx",
+            data: { "n": n },
+            success: function (json) {
+                //json = JSON.parse(json);
+                console.log(json);
+                $.each(json, function (i, n) {
+                    console.log(n.A_Name);
+                    var pro = $("#dl1");
+                    $("" + n.A_Name + "").appendTo(pro);
+                });
+            }
+        });
+    }
+    function GetCity(n) {
+        var city = $("#dl2");
+        city.html("");
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "Handler.ashx",
+            data: { "n": n },
+            success: function (json) {
+                $.each(json, function (i, n) {
+                    $("" + n.A_Num1 + ">" + n.A_Name + "").appendTo(city);
+                });
+            }
         });
     }
 </script>

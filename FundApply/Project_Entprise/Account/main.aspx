@@ -12,6 +12,7 @@
     <link href="../../css/plug/layui/css/layui.css" rel="stylesheet" />
     <script src="../../css/plug/layui/layui.js"></script>
     <script src="../../css/plug/layui/lay/dest/layui.all.js"></script>
+    <script src="../../js/jquery-1.8.3.min.js"></script>
     <style type="text/css">
         .layui-input {
             width: 95% !important;
@@ -42,18 +43,19 @@
         <div style="text-align: center;">
             <label class="layui-form-label">用户名 </label>
             <div class="layui-input-block">
-                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入用户名" class="layui-input">
+                <input type="text" name="Nat_Org_Code"  autocomplete="off" placeholder="请输入用户名" class="layui-input" id="Nat_Org_Code" runat="server" readonly="readonly"/>
             </div>
             <label class="layui-form-label">密码</label>
             <div class="layui-input-block">
-                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入密码" class="layui-input">
+                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入密码" class="layui-input" id="Password" runat="server"/>
             </div>
             <label class="layui-form-label">邮箱</label>
             <div class="layui-input-block">
-                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入邮箱" class="layui-input">
+                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入邮箱" class="layui-input" id="Email1" runat="server"/>
             </div>
             <div style="text-align: center; margin-top: 10px;">
-                <button class="button button-primary button-pill button-tiny" type="button" onclick="GoSearch()">修改</button>
+                <asp:Button  CssClass="button button-primary button-pill button-tiny" Text="修改" runat="server"  ID="Modify" OnClick="Modify_Click"/>
+                <%--<button class="button button-primary button-pill button-tiny" type="button" onclick="GoSearch()" id=" Modify" >修改</button>--%>
                 <%--<button class="button button-primary button-pill button-tiny" type="button" onclick="Close()">取消</button>--%>
             </div>
         </div>
@@ -61,6 +63,7 @@
 </body>
 </html>
 <script type="text/javascript">
+    $("#Nat_Org_Code").val('<%=Session["Nat_Org_Code"]%>');
     $(function () {
         var from = layui.form(), layer = layui.layer;
     });

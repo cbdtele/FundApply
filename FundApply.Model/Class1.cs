@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FundApply.Model
 {
-    public class Class1
+    class Class1
     {
     }
 }

@@ -53,12 +53,12 @@
             </fieldset>
             <label class="layui-form-label">组织机构代码 </label>
             <div class="layui-input-block">
-                <input name="title" lay-verify="title" autocomplete="off" class="layui-input" value="694968736" />
+                <input name="title" lay-verify="title" autocomplete="off" class="layui-input" value="MA001DEU2" />
                 <%--<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入组织机构代码/统一社会信用代码" class="layui-input">--%>
             </div>
             <label class="layui-form-label">单位名称</label>
             <div class="layui-input-block">
-                <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" value="北京测试test有限公司">
+                <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input" value="北京商务中心区通信科技有限公司">
             </div>
             <label class="layui-form-label">所属行业</label>
              <div class="layui-input-block">
@@ -72,11 +72,11 @@
             </div>
             <label class="layui-form-label">申请资金</label>
             <div class="layui-input-block">
-                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入申请资金" class="layui-input" value="200万">
+                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入申请资金" class="layui-input" value="50万">
             </div>
-            <label class="layui-form-label" >审核资金</label>
+            <label class="layui-form-label" >支持资金</label>
             <div class="layui-input-block">
-                <input <%--id="shzj" style="border-width:1px;margin-left:10px;" --%> type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入申请资金" class="layui-input" value="200万">
+                <input <%--id="shzj" style="border-width:1px;margin-left:10px;" --%> type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入申请资金" class="layui-input" value="50万">
             </div>
         </form>
         <div style="text-align: center; padding: 5px">

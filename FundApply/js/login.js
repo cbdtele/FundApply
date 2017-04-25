@@ -1,7 +1,7 @@
 ﻿
 function readCookie() {
     if (document.getElementById("Image").value == "") {
-        alert("请输入验证码");
+        layer.alert("请输入验证码");
         document.getElementById("Image").focus();
         return false;
     }
@@ -19,21 +19,21 @@ function readCookie() {
         }
         else {
             document.getElementById("Image").select();
-            document.getElementById("imgRandom").src = "DataExchange/Randomimage_CN.aspx?abc=" + Math.random();
-            alert("验证码输入错误！")
+            document.getElementById("imgRandom").src = "../Randomimage_CN.aspx?abc=" + Math.random();            
+            layer.alert("验证码输入错误！")
             return false;
         }
     }
 }
 function check() {
-    if (document.getElementById("txtUserName").value == "") {
-        alert("用户名不能为空");
-        document.getElementById("txtUserName").focus();
+    if (document.getElementById("logname").value == "") {
+        layer.alert("用户名不能为空");
+        document.getElementById("logname").focus();
         return false;
     }
-    if (document.getElementById("txtPassword").value == "") {
-        alert("密码不能为空");
-        document.getElementById("txtPassword").focus();
+    if (document.getElementById("logpassword").value == "") {
+        layer.alert("密码不能为空");
+        document.getElementById("logpassword").focus();
         return false;
     }
     return true;

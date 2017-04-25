@@ -22,6 +22,10 @@
         * {
             margin: 0 auto;
         }
+                a {
+            color:blue;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>

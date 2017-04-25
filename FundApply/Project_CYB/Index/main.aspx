@@ -19,27 +19,14 @@
         * {
             margin: 0 auto;
         }
-
+         a {
+            color:blue;
+            cursor: pointer;
+        }
         label {
             font-size: 16px;
             text-align: left;
-        }
-        .layui-input {
-            width: 95% !important;
-        }
-
-        .dvlayui label {
-            font-size: 14px;
-        }
-
-        .layui-form-label {
-            width: 100px !important;
-        }
-
-        .layui-input-block {
-            margin-left: 130px !important;
-            min-height: 45px !important;
-        }
+        }      
     </style>
 </head>
 <body>
@@ -48,8 +35,8 @@
             <span class="span-line"></span>
             <label>
                 2017上半年产业资金申报情况 &nbsp;&nbsp;
-                                申报时间：2017年4月8日--2017年6月30日  &nbsp;&nbsp;
-                                <button class="button button-primary button-pill button-tiny" type="button" onclick="EditCapitalApply();">修改申报时间</button>
+                申报时间：2017年4月8日--2017年6月30日  &nbsp;&nbsp;
+                <button class="button button-primary button-pill button-tiny" type="button" onclick="EditCapitalApply();">修改申报时间</button>
             </label>
         </div>
         <table class=" gridtable">
@@ -72,17 +59,17 @@
             </tr>
             <tr>
                 <td style="text-align: left;">金融资金-房屋补贴</td>
-                <td style="text-align: right;"><a href="javascript:void(0);" onclick="goEntprise('0');">400</a></td>
-                <td style="text-align: right;">2000</td>
-                <td style="text-align: right;"><a href="javascript:void(0);" onclick="goEntprise('1');">100</a></td>
-                <td style="text-align: right;"><a href="javascript:void(0);" onclick="goEntprise('2');">100</a></td>
-                <td style="text-align: right;"><a href="javascript:void(0);" onclick="goEntprise('3');">200</a></td>
-                <td style="text-align: right;">2000</td>
-                <td style="text-align: right;"><a href="javascript:void(0);" onclick="goEntprise('4');">100</a></td>
-                <td style="text-align: right;"><a href="javascript:void(0);" onclick="goEntprise('5');">100</a></td>
-                <td style="text-align: right;">1000</td>
+                <td style="text-align: right;"><a href="javascript:void(0);" onclick="goEntprise('0');">1</a></td>
+                <td style="text-align: right;">50</td>
+                <td style="text-align: right;"><a href="javascript:void(0);" onclick="goEntprise('1');">1</a></td>
+                <td style="text-align: right;"><a href="javascript:void(0);" onclick="goEntprise('2');">1</a></td>
+                <td style="text-align: right;"><a href="javascript:void(0);" onclick="goEntprise('3');">1</a></td>
+                <td style="text-align: right;">50</td>
+                <td style="text-align: right;"><a href="javascript:void(0);" onclick="goEntprise('4');">1</a></td>
+                <td style="text-align: right;"><a href="javascript:void(0);" onclick="goEntprise('5');">0</a></td>
+                <td style="text-align: right;">50</td>
             </tr>
-            <tr>
+<%--            <tr>
                 <td style="text-align: left;">金融资金-一次性入驻</td>
                 <td style="text-align: right;">400</td>
                 <td style="text-align: right;">2000</td>
@@ -105,18 +92,18 @@
                 <td style="text-align: right;">100</td>
                 <td style="text-align: right;">100</td>
                 <td style="text-align: right;">1000</td>
-            </tr>
+            </tr>--%>
             <tr>
                 <td style="text-align: left; font-weight: 900">合计</td>
-                <td style="text-align: right;">1200</td>
-                <td style="text-align: right;">6000</td>
-                <td style="text-align: right;">300</td>
-                <td style="text-align: right;">300</td>
-                <td style="text-align: right;">600</td>
-                <td style="text-align: right;">6000</td>
-                <td style="text-align: right;">300</td>
-                <td style="text-align: right;">300</td>
-                <td style="text-align: right;">3000</td>
+                <td style="text-align: right;">1</td>
+                <td style="text-align: right;">50</td>
+                <td style="text-align: right;" id="dsh"><%=Session["num1"]==null?1:Session["num1"] %></td>
+                <td style="text-align: right;">1</td>
+                <td style="text-align: right;">1</td>
+                <td style="text-align: right;">50</td>
+                <td style="text-align: right;">1</td>
+                <td style="text-align: right;">0</td>
+                <td style="text-align: right;">50</td>
             </tr>
         </table>
         <div style="text-align: left; margin: 20px 0px 10px 0px;">
@@ -139,20 +126,20 @@
                 <th>产业资金申请</th>
                 <th>申报单位数</th>
                 <th>审核通过</th>
-                <th>审核资金（万元）</th>
+                <th>支持资金（万元）</th>
             </tr>
             <tr>
                 <td>1</td>
                 <td>2016上半年</td>
-                <td onclick="searchRow('2017');" style="cursor: pointer;">500</td>
-                <td>400</td>
+                <td style="text-align: right;"><a href="javascript:void(0);" onclick="goEntprise('0');">500</a></td>
+                <td style="text-align: right;"><a href="javascript:void(0);" onclick="goEntprise('0');">400</a></td>
                 <td>2500</td>
             </tr>
             <tr>
                 <td>2</td>
                 <td>2016下半年</td>
-                <td onclick="searchRow('2016');" style="cursor: pointer;">500</td>
-                <td>400</td>
+                <td style="text-align: right;"><a href="javascript:void(0);" onclick="goEntprise('0');">500</a></td>
+                <td style="text-align: right;"><a href="javascript:void(0);" onclick="goEntprise('0');">400</a></td>
                 <td>2500</td>
             </tr>
         </table>

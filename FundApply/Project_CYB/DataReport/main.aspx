@@ -26,6 +26,11 @@
         * {
             margin: 0 auto;
         }
+
+        a {
+            color: blue;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -50,7 +55,7 @@
             <tr>
                 <td>1</td>
                 <td>金融业</td>
-                <td>694968736</td>
+                <td>MA001DEU2</td>
                 <td>北京test科技有限公司</td>
                 <td>房屋补贴</td>
                 <td>100</td>
@@ -59,7 +64,7 @@
             <tr>
                 <td>2</td>
                 <td>金融业</td>
-                <td>694968736</td>
+                <td>MA001DEU2</td>
                 <td>北京test科技有限公司</td>
                 <td>房屋补贴</td>
                 <td>100</td>
@@ -68,7 +73,7 @@
             <tr>
                 <td>3</td>
                 <td>金融业</td>
-                <td>694968736</td>
+                <td>MA001DEU2</td>
                 <td>北京test科技有限公司</td>
                 <td>房屋补贴</td>
                 <td>100</td>

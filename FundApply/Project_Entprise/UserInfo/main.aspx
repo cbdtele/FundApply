@@ -41,30 +41,30 @@
         </div>
         <label class="layui-form-label">组织机构代码 </label>
         <div class="layui-input-block">
-            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入组织机构代码/统一社会信用代码" class="layui-input">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入组织机构代码/统一社会信用代码" class="layui-input" id="Nat_Org_Code" runat="server" readonly="readonly"/>
         </div>
         <label class="layui-form-label">单位名称</label>
         <div class="layui-input-block">
-            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入单位名称" class="layui-input">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入单位名称" class="layui-input" id="Company" runat="server"  readonly="readonly"/>
         </div>
         <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
             <legend>联系方式一</legend>
         </fieldset>
         <label class="layui-form-label">联系人</label>
         <div class="layui-input-block">
-            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入联系人" class="layui-input">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入联系人" class="layui-input" id="LinkMan1" runat="server"/>
         </div>
         <label class="layui-form-label">手机</label>
         <div class="layui-input-block">
-            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入手机" class="layui-input">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入手机" class="layui-input" id="MobilePhone1" runat="server"/>
         </div>
         <label class="layui-form-label">固定电话</label>
         <div class="layui-input-block">
-            <input id="phone" type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入固定电话" class="layui-input">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入固定电话" class="layui-input" id="Telephone1" runat="server"/>
         </div>
         <label class="layui-form-label">邮箱</label>
         <div class="layui-input-block">
-            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入邮箱" class="layui-input">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入邮箱" class="layui-input" id="Email1" runat="server"/>
         </div>
 
         <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
@@ -72,27 +72,28 @@
         </fieldset>
         <label class="layui-form-label">联系人</label>
         <div class="layui-input-block">
-            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入联系人" class="layui-input">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入联系人" class="layui-input" id="LinkMan2" runat="server"/>
         </div>
         <label class="layui-form-label">手机</label>
         <div class="layui-input-block">
-            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入手机" class="layui-input">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入手机" class="layui-input" id="MobilePhone2" runat="server"/>
         </div>
         <label class="layui-form-label">固定电话</label>
         <div class="layui-input-block">
-            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入固定电话" class="layui-input">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入固定电话" class="layui-input" id="Telephone2" runat="server"/>
         </div>
         <label class="layui-form-label">邮箱</label>
         <div class="layui-input-block">
-            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入邮箱" class="layui-input">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入邮箱" class="layui-input" id="Email2" runat="server"/>
         </div>
 
         <label class="layui-form-label">账号密码</label>
         <div class="layui-input-block">
-            <input id="password" type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入账号密码" class="layui-input">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入账号密码" class="layui-input" id="Password" runat="server"/>
         </div>
         <div style="text-align: center; margin-top: 10px;">
-            <button class="button button-primary button-pill button-tiny" type="button" onclick="GoSearch()">修改</button>
+            <asp:Button  CssClass="button button-primary button-pill button-tiny" Text="修改" runat="server"  ID="Modify" OnClick="Modify_Click"/>
+            <%--<button class="button button-primary button-pill button-tiny" type="button" onclick="GoSearch()" id="Modify" runat="server">修改</button>--%>
         </div>
     </form>
 </body>

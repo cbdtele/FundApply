@@ -10,6 +10,12 @@
     <link href="../../css/buttons.css" rel="stylesheet" />
     <script src="../../js/jquery-1.8.3.min.js"></script>
     <script src="../../js/plug/layer/layer.js"></script>
+        <style>
+        a {
+            color:blue;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -31,14 +37,14 @@
                 <td>测试标题test1</td>
                 <td>2017-03-29</td>
                 <td>已发布</td>
-                <td onclick="SearchNotice()" style="cursor: pointer;">查看</td>
+                <td><a href="javascript:void(0);" onclick="SearchNotice();">查看</a></td>
             </tr>
             <tr>
                 <td>2</td>
                 <td>测试标题test2</td>
                 <td>2017-03-30</td>
                 <td>未发布</td>
-                <td onclick="EditNotice()" style="cursor: pointer;">编辑</td>
+                 <td><a href="javascript:void(0);" onclick="EditNotice();">编辑</a></td>
             </tr>
         </table>
     </form>

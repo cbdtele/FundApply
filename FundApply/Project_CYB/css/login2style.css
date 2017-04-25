@@ -1,0 +1,123 @@
+*{margin: 0 auto}
+body{text-align: center;font-family: "微软雅黑";background-color: #eee;}
+img{outline: 0px;border: 0px;}
+input{outline: 0px;}
+a{text-decoration: none;}
+#wrap{
+	position: relative;
+	width: 1024px;
+	height:100%;
+	background-color: #f3f3f3;
+}
+#wrap .bg{
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+#topwrap{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 110px;
+	z-index: 99;
+	background: url("../images/top.png") no-repeat;
+}
+
+#contwrap{
+	position:absolute;
+	left: 0px;
+	width: 100%;
+	top: 25%;
+	z-index: 20;
+	height: 80%;
+}
+#cont{
+	position: relative;
+	width:525px;
+	height: auto;
+	border-radius: 15px;
+	border: 1px solid #fff;
+	background-color: #fff;
+	box-shadow: 0px 2px 2px #555;
+}
+
+#cont .left{
+	width: 75%;
+	height: auto;	
+}
+#cont .left .leftmain{
+	width: 90%;
+	height: auto;
+	margin-top: 10px;
+}
+#cont .tts{
+	width: 100%;
+	height: 31px;
+}
+#cont .inputs form{
+	height: auto;
+}
+#cont .inputs{
+	width: 100%;
+	height: auto;
+	margin-top: 30px;
+}
+#cont .inputs p{
+	width: 100%;
+	height: 20px;
+	
+}
+#cont .left .inputs p{
+	margin-bottom: 30px;
+}
+#cont .inputs label{
+	float: left;
+	color: #333;
+	font-size: 15px;
+	
+}
+#cont .inputs .commen input{
+		float: right;
+}
+#cont .inputs input{
+
+	border: 1px solid #e5e5e5;
+	height: 30px;
+	line-height: 30px;
+	width: 260px;
+	border-radius: 3px;
+}
+#cont .inputs input.yzm{
+	
+	width: 80px;	
+}
+#cont .inputs  img{
+	vertical-align: middle;
+	margin-left: 10px;
+}
+#cont .inputs p.ff{
+	margin-bottom: 10px;
+}
+#cont .inputs p .forgot{
+	float: right;
+	margin-right: 20px;
+	font-size: 13px;
+	color: #333;
+}
+#cont .inputs p .forgot:hover{
+	font-size: 13px;
+	color:#00bbd2;
+}
+#cont .inputs p .submit{
+	background-color: #00bbd2;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	outline: 0px;
+	border: 0px;
+}
+
+

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundApply.BLL", "FundApply.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundApply.Model", "FundApply.Model\FundApply.Model.csproj", "{281551AC-A011-4673-B343-C91771C12269}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundApply.Common", "FundApply.Common\FundApply.Common.csproj", "{52E12744-B50C-445D-83DA-18FFA0382DF8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{281551AC-A011-4673-B343-C91771C12269}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{281551AC-A011-4673-B343-C91771C12269}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{281551AC-A011-4673-B343-C91771C12269}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52E12744-B50C-445D-83DA-18FFA0382DF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E12744-B50C-445D-83DA-18FFA0382DF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E12744-B50C-445D-83DA-18FFA0382DF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E12744-B50C-445D-83DA-18FFA0382DF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

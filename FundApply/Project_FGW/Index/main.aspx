@@ -10,6 +10,12 @@
     <link href="../../css/buttons.css" rel="stylesheet" />
     <script src="../../js/jquery-1.8.3.min.js"></script>
     <script src="../../js/plug/layer/layer.js"></script>
+        <style>
+        a {
+            color:blue;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">

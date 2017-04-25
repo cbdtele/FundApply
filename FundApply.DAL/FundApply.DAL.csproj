@@ -39,10 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Dic_ApplyTypeDal.cs" />
+    <Compile Include="Dic_IndustryDal.cs" />
+    <Compile Include="ProjectApplyDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsersDal.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FundApply.Common\FundApply.Common.csproj">
+      <Project>{52e12744-b50c-445d-83da-18ffa0382df8}</Project>
+      <Name>FundApply.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FundApply.Model\FundApply.Model.csproj">
       <Project>{281551ac-a011-4673-b343-c91771c12269}</Project>
       <Name>FundApply.Model</Name>

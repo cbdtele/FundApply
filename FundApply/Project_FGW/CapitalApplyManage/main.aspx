@@ -12,6 +12,12 @@
     <script src="../../js/plug/layer/layer.js"></script>
     <link href="../../css/plug/layui/css/layui.css" rel="stylesheet" />
     <script src="../../css/plug/layui/lay/dest/layui.all.js"></script>
+    <style>
+        a {
+            color: blue;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -27,26 +33,26 @@
                 <th>申报开始时间</th>
                 <th>申报结束时间</th>
                 <th>审核单位数</th>
-                <th>审核资金（万元）</th>
+                <th>支持资金（万元）</th>
                 <th>操作</th>
             </tr>
             <tr>
                 <td>1</td>
-                <td onclick="CapitalApplyHistory('2016上半年')" style="cursor: pointer;">2016上半年</td>
+                <td><a href="javascript:void(0);" onclick="CapitalApplyHistory();">2016上半年</a></td>
                 <td>2017-03-01</td>
                 <td>2017-06-01</td>
                 <td>500</td>
                 <td>2500</td>
-                <td onclick="EditCapitalApply()" style="cursor: pointer;">修改</td>
+                <td><a href="javascript:void(0);" onclick="EditCapitalApply();">修改</a></td>
             </tr>
             <tr>
                 <td>2</td>
-                <td onclick="CapitalApplyHistory('2016下半年')" style="cursor: pointer;">2016下半年</td>
+                <td><a href="javascript:void(0);" onclick="CapitalApplyHistory();">2016下半年</a></td>
                 <td>2016-03-01</td>
                 <td>2016-06-01</td>
                 <td>500</td>
                 <td>2500</td>
-                <td onclick="EditCapitalApply()" style="cursor: pointer;">修改</td>
+                <td><a href="javascript:void(0);" onclick="EditCapitalApply();">修改</a></td>
             </tr>
         </table>
     </form>
