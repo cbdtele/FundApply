@@ -1,9 +1,11 @@
 ﻿using FundApply.BLL;
 using FundApply.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -12,87 +14,74 @@ namespace FundApply.Project_Entprise
     public partial class EditProject : System.Web.UI.Page
     {
         ProjectApplyBll projectApplyBll = new ProjectApplyBll();
+        Dic_ApplyTypeBll dic_ApplyTypeBll = new Dic_ApplyTypeBll();
+        List<Dic_ApplyTypeModel> Dic_ApplyTypeList = new List<Dic_ApplyTypeModel>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                InitWeb();
-            }
-
         }
 
-        public void InitWeb()
+        [WebMethod]
+        public static string InitData(string userId)
         {
- 
-            UsersModel usersModel = Session["UsersModel"] as UsersModel;
-            int userId = usersModel.Id;
-            // userId = 2;
-            ProjectApplyModel projectApplyModel = projectApplyBll.GetModel(userId);
-            txtNat_Org_Code.Value = usersModel.Nat_Org_Code;
-            txtCompany.Value = usersModel.Company;
-
-            txtCompany.Value = projectApplyModel.Company;
-            //drpIndustryId.SelectedValue = projectApplyModel.IndustryId.ToString();
-            txtYYSR.Value = projectApplyModel.YYSR.ToString();
-            txtTAX.Value = projectApplyModel.TAX.ToString();
-            txtEmployee.Value = projectApplyModel.Employee.ToString();
-            txtRegAddress.Value = projectApplyModel.RegAddress;
-            txtBusinessAddress.Value = projectApplyModel.BusinessAddress;
-            txtApplyTypeId.Value = projectApplyModel.ApplyTypeId.ToString();
-            txtApplyFund.Value = projectApplyModel.ApplyFund.ToString();
-            txtAttachment.Value = projectApplyModel.Attachment;
-            txtProjectLinkMan.Value = projectApplyModel.ProjectLinkMan;
-            txtProjectPosition.Value = projectApplyModel.ProjectPosition;
-            txtProjectMobilPhone.Value = projectApplyModel.ProjectMobilPhone;
-            txtProjectEmail.Value = projectApplyModel.ProjectEmail;
-
-            //行业下拉框        
-            Dic_IndustryBll dic_IndustryBll = new Dic_IndustryBll();
-            List<Dic_IndustryModel> Dic_IndustryList = new List<Dic_IndustryModel>();
-            drpIndustryId.DataTextField = "IndustryName";
-            drpIndustryId.DataValueField = "IndustryId";
-            drpIndustryId.SelectedValue = projectApplyModel.IndustryId.ToString();
-            drpIndustryId.DataSource = dic_IndustryBll.GetModelList("1=1");
-            drpIndustryId.DataBind();
+            ProjectApplyBll projectApplyBll = new ProjectApplyBll();
+            ProjectApplyModel model = projectApplyBll.GetModel(int.Parse(userId));
+            return JsonConvert.SerializeObject(model);
         }
-
-        protected void btnSubmit_Click(object sender, EventArgs e)
+        [WebMethod]
+        public static string UpdateApplyProject(string id,string UserId,
+            string Nat_Org_Code, string Company, string IndustryId, string YYSR, string TAX,
+            string Employee, string RegAddress, string BusinessAddress, string TaxAddress, string ApplyTypeId, string ApplyFund,
+            string ApplyTable, string Attachment, string Remarks, string ProjectLinkMan, string ProjectPosition, string ProjectMobilPhone, string ProjectEmail)
         {
-            int id = (Session["UsersModel"] as UsersModel).Id;
+            //int id = (Session["UsersModel"] as UsersModel).Id;
+
+            //修改项目
+            ProjectApplyBll projectApplyBll = new ProjectApplyBll();
             ProjectApplyModel projectApplyModel = new ProjectApplyModel();
-            //projectApplyModel.Nat_Org_Code = txtNat_Org_Code.Value;
-            projectApplyModel.UserId = id;
-            projectApplyModel.Company = txtCompany.Value;
-            projectApplyModel.IndustryId = int.Parse(drpIndustryId.SelectedValue);
-            projectApplyModel.YYSR = decimal.Parse(txtYYSR.Value);
-            projectApplyModel.TAX = decimal.Parse(txtYYSR.Value);
-            projectApplyModel.Employee = int.Parse(txtEmployee.Value);
-            projectApplyModel.RegAddress = txtRegAddress.Value;
-            projectApplyModel.BusinessAddress = txtBusinessAddress.Value;
-            projectApplyModel.ApplyTypeId = int.Parse(txtApplyTypeId.Value);
-            projectApplyModel.ApplyFund = decimal.Parse(txtApplyFund.Value);
-            projectApplyModel.Attachment = txtAttachment.Value;
-            projectApplyModel.ProjectLinkMan = txtProjectLinkMan.Value;
-            projectApplyModel.ProjectPosition = txtProjectPosition.Value;
-            projectApplyModel.ProjectMobilPhone = txtProjectMobilPhone.Value;
-            projectApplyModel.ProjectEmail = txtProjectEmail.Value;
+            projectApplyModel.Id = int.Parse(id);
+            projectApplyModel.UserId = int.Parse(UserId);
+            projectApplyModel.Company = Company;
+            projectApplyModel.IndustryId = int.Parse(IndustryId);
+            projectApplyModel.YYSR = decimal.Parse(YYSR);
+            projectApplyModel.TAX = decimal.Parse(TAX);
+            projectApplyModel.Employee = int.Parse(Employee);
+            projectApplyModel.RegAddress = RegAddress;
+            projectApplyModel.BusinessAddress = BusinessAddress;
+            projectApplyModel.TaxAddress = TaxAddress;
+            projectApplyModel.ApplyTypeId = int.Parse(ApplyTypeId);
+            projectApplyModel.ApplyFund = decimal.Parse(ApplyFund);
+            projectApplyModel.ApplyTable = ApplyTable;
+            projectApplyModel.Attachment = Attachment;
+            projectApplyModel.Remarks = Remarks;
+            projectApplyModel.ProjectLinkMan = ProjectLinkMan;
+            projectApplyModel.ProjectPosition = ProjectPosition;
+            projectApplyModel.ProjectMobilPhone = ProjectMobilPhone;
+            projectApplyModel.ProjectEmail = ProjectEmail;
             projectApplyModel.ProjectState = 1;
             projectApplyModel.ApprovalFund = 0;
             projectApplyModel.ApprovalState = 1;
             projectApplyModel.CreateTime = DateTime.Now;
             projectApplyModel.UpdateTime = DateTime.Now;
+
             try
             {
-                bool type = projectApplyBll.Update(projectApplyModel);
-                if (type)
+                bool r = projectApplyBll.Update(projectApplyModel);            
+                if (r )
                 {
-                    Response.Write("<script>alert('修改成功');</script>");
+                    return "ok";
+                }
+                else
+                {
+                    return "no";
                 }
             }
             catch (Exception)
             {
+
                 throw;
             }
+
         }
     }
 }

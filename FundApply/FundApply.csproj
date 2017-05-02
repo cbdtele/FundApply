@@ -660,6 +660,7 @@
     <Content Include="images\th.gif" />
     <Content Include="images\ticon.png" />
     <Content Include="images\time.png" />
+    <Content Include="images\title.png" />
     <Content Include="images\toolbg.gif" />
     <Content Include="images\top.png" />
     <Content Include="images\top2.png" />
@@ -1392,6 +1393,16 @@
     <Content Include="js\plug\UEditor\ueditor.config.js" />
     <Content Include="js\plug\UEditor\ueditor.parse.js" />
     <Content Include="js\plug\UEditor\ueditor.parse.min.js" />
+    <Content Include="js\plug\uploadify\Change Log.txt" />
+    <Content Include="js\plug\uploadify\jquery.uploadify.js" />
+    <Content Include="js\plug\uploadify\jquery.uploadify.min.js" />
+    <Content Include="js\plug\uploadify\license.txt" />
+    <Content Include="js\plug\uploadify\uploadify-cancel.png" />
+    <Content Include="js\plug\uploadify\uploadify.css" />
+    <Content Include="js\plug\uploadify\uploadify.swf" />
+    <Content Include="js\plug\uploadify\WebForm1.aspx" />
+    <Content Include="js\plug\uploadify\__MACOSX\._Change Log.txt" />
+    <Content Include="js\plug\uploadify\__MACOSX\._uploadify.swf" />
     <Content Include="js\plug\Ztree\api\apiCss\api.js" />
     <Content Include="js\plug\Ztree\api\apiCss\common.css" />
     <Content Include="js\plug\Ztree\api\apiCss\common_ie6.css" />
@@ -1911,6 +1922,8 @@
     <Content Include="InformationManager\Policy\PolicyList.aspx" />
     <Content Include="ManageLogin.aspx" />
     <Content Include="Project_CYB\Account\main.aspx" />
+    <Content Include="Project_CYB\Index\ApplyProject.aspx" />
+    <Content Include="Project_CYB\Index\ApplyProjectList.aspx" />
     <Content Include="Project_CYB\Index\LXSH\Checked\ApplyProject.aspx" />
     <Content Include="Project_CYB\Index\LXSH\Checked\EnterpriseList.aspx" />
     <Content Include="Project_CYB\DataReport\ApplyProject.aspx" />
@@ -1982,8 +1995,14 @@
     <Compile Include="ashx\ApplyProjectDrp.ashx.cs">
       <DependentUpon>ApplyProjectDrp.ashx</DependentUpon>
     </Compile>
+    <Compile Include="ashx\IndustryDrp.ashx.cs">
+      <DependentUpon>IndustryDrp.ashx</DependentUpon>
+    </Compile>
     <Compile Include="ashx\upload.ashx.cs">
       <DependentUpon>upload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\UploadHandler.ashx.cs">
+      <DependentUpon>UploadHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -2031,6 +2050,13 @@
     <Compile Include="js\plug\UEditor\net\App_Code\NotSupportedHandler.cs" />
     <Compile Include="js\plug\UEditor\net\App_Code\PathFormater.cs" />
     <Compile Include="js\plug\UEditor\net\App_Code\UploadHandler.cs" />
+    <Compile Include="js\plug\uploadify\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="js\plug\uploadify\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="left.aspx.cs">
       <DependentUpon>left.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2080,6 +2106,20 @@
     </Compile>
     <Compile Include="Project_CYB\Account\main.aspx.designer.cs">
       <DependentUpon>main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Project_CYB\Index\ApplyProject.aspx.cs">
+      <DependentUpon>ApplyProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Project_CYB\Index\ApplyProject.aspx.designer.cs">
+      <DependentUpon>ApplyProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Project_CYB\Index\ApplyProjectList.aspx.cs">
+      <DependentUpon>ApplyProjectList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Project_CYB\Index\ApplyProjectList.aspx.designer.cs">
+      <DependentUpon>ApplyProjectList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Project_CYB\Index\LXSH\Checked\ApplyProject.aspx.cs">
       <DependentUpon>ApplyProject.aspx</DependentUpon>
@@ -2550,6 +2590,12 @@
     <Content Include="js\plug\jquery-validation-1.14.0\package.json" />
     <Content Include="js\plug\jquery-validation-1.14.0\README.md" />
     <Content Include="ashx\ApplyProjectDrp.ashx" />
+    <Content Include="ashx\IndustryDrp.ashx" />
+    <Content Include="file\ApplyTable\cyb_1.docx" />
+    <Content Include="ashx\UploadHandler.ashx" />
+    <Content Include="js\plug\uploadify\check-exists.php" />
+    <Content Include="js\plug\uploadify\index.php" />
+    <Content Include="js\plug\uploadify\uploadify.php" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2571,6 +2617,17 @@
       <Project>{281551ac-a011-4673-b343-c91771c12269}</Project>
       <Name>FundApply.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="jmail">
+      <Guid>{AED3A6B0-2171-11D2-B77C-0008C73ACA8F}</Guid>
+      <VersionMajor>4</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

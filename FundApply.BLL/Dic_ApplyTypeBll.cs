@@ -46,10 +46,11 @@ namespace FundApply.BLL
 		{
 			return dal.GetList(strWhere);
 		}
-		/// <summary>
-		/// 获得数据列表
-		/// </summary>
-		public List<Dic_ApplyTypeModel> GetModelList(string strWhere)
+
+        /// <summary>
+        /// 获得数据列表
+        /// </summary>
+        public List<Dic_ApplyTypeModel> GetModelList(string strWhere)
 		{
 			DataSet ds = dal.GetList(strWhere);
 			return DataTableToList(ds.Tables[0]);
@@ -58,9 +59,9 @@ namespace FundApply.BLL
         /// <summary>
         /// 获得数据列表
         /// </summary>
-        public List<Dic_ApplyTypeModel> GetModelList()
+        public List<Dic_ApplyTypeModel> GetBigModelList(string strWhere)
         {
-            DataSet ds = dal.GetList();
+            DataSet ds = dal.GetListBig (strWhere);
             return DataTableToList1(ds.Tables[0]);
         }
         /// <summary>

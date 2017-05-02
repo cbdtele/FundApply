@@ -43,6 +43,8 @@
     <Compile Include="Dic_ApplyTypeModel.cs" />
     <Compile Include="Dic_IndustryModel.cs" />
     <Compile Include="ProjectApplyModel.cs" />
+    <Compile Include="ProjectApply_CheckModel.cs" />
+    <Compile Include="ProjectApply_ModifyContentModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsersModel.cs" />
   </ItemGroup>

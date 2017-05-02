@@ -1,53 +1,74 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="FundApply.WebForm1" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <script src="js/jquery-1.8.3.min.js"></script>
-    <script src="js/plug/layer/Jquery.CBD.js"></script>
+<head id="Head1" runat="server">
+    <title>个人会员密码找回</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript">
+        // 检查 E-mail 是否已被注册  
+        function CheckEmail() {
+            var e = document.getElementById("email").value;
+            if (e != "") {
+                if (!/(\S)+[@]{1}(\S)+[.]{1}(\w)+/.test(e)) {
+                    alert("请输入格式正确的E-mail 地址！");
+                    var email = document.getElementById("email");
+                    email.value = "";
+                    email.focus();
+                }
+            }
+        }
+
+        function checkAll() {
+            var ee = document.getElementById("username").value;
+            if (ee == "") {
+                alert('登录名称不能为空');
+                return false;
+            }
+
+            var e = document.getElementById("email").value;
+            if (e == "") {
+                alert('Emial不能为空');
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
-    <form id="form1">
-    <div>ddddddddddddddddddddddddddddddddddddddddd
-        <input  name="a"/>
-        <input  name="ab"/>
-        <input  name="abc"/>
-        <input  name="abcd"/>
-        <input type="button" name="name" value="myfunction"  onclick="myfunction();"/>
-    </div>
+    <form id="form1" runat="server">
+        <div>
+            <table width="778" border="0" align="center" cellpadding="5" cellspacing="0" class="table_huang">
+                <tr>
+                    <td colspan="2" class="TD_huang_14_write"><span style="font-size: 11pt">>> 获取密码</span></td>
+                </tr>
+                <tr>
+                    <td width="26"></td>
+                    <td width="724">
+                        <table width="90%" border="0" cellspacing="2" cellpadding="5">
+                            <tr>
+                                <td width="23%">
+                                    <div align="right">用户名：</div>
+                                </td>
+                                <td width="77%">
+                                    <asp:TextBox ID="username" runat="server" Width="150px"></asp:TextBox></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div align="right">注册时填写的Email：</div>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="email" runat="server" Width="200px"></asp:TextBox></td>
+                            </tr>                          
+                            <tr>
+
+                                <td colspan="2" style="text-align: center">
+                                    <asp:Button ID="Button1" runat="server" Text=" 找回密码 " /></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </form>
 </body>
 </html>
-<script>
-    function myfunction() {
-
-        var $data = $('form').serialize();
-        //$data = JSON.parse($data);
-        //$data = JSON.stringify($data);
-
-        console.log($data);
-        $.CBD.ajaxData({time1:$data}, "<%=Request.Path%>/Add", function (json) {
-            alert(json);
-        });
-        //data = { "id": "123" };
-        ////data = JSON.stringify(data);
-        ////data = JSON.parse(data);
-        //$.ajax({
-        //    type:'post',
-        //    url: '/WebForm1.aspx/Add',
-        //    contentType: "application/json; charset=utf-8",
-        //    dataType: "json",
-        //    //data: data,
-        //    success: function (r) {
-        //        //r = JSON.stringify(r);
-        //        alert(r.d);//返回的数据用data.d获取内容
-        //    },
-        //    error: function (err) {
-        //        alert(err);
-        //    }
-        //});        
-    }
-</script>

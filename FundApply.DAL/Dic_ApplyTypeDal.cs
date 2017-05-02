@@ -37,7 +37,7 @@ namespace FundApply.DAL
 		{
 			//该表无主键信息，请自定义主键/条件字段
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 Id,ApplyTypeId_BigId,ApplyTypeId_SmallId,ApplyTypeId_BigName,ApplyTypeId_SmallName from Dic_ApplyType ");
+			strSql.Append("select  top 1 Id,ApplyTypeId_BigId,ApplyTypeId_SmallId,ApplyTypeId_BigName,ApplyTypeId_SmallName,ApplyTableUrl from Dic_ApplyType ");
 			strSql.Append(" where ");
 			SqlParameter[] parameters = {
 			};
@@ -83,7 +83,11 @@ namespace FundApply.DAL
 				    {
 					    model.ApplyTypeId_SmallName=row["ApplyTypeId_SmallName"].ToString();
 				    }
-			    }
+                if (row["ApplyTableUrl"] != null)
+                {
+                    model.ApplyTableUrl = row["ApplyTableUrl"].ToString();
+                }
+            }
 			    return model;
 		    }
 
@@ -116,7 +120,7 @@ namespace FundApply.DAL
         public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Id,ApplyTypeId_BigId,ApplyTypeId_SmallId,ApplyTypeId_BigName,ApplyTypeId_SmallName ");
+			strSql.Append("select Id,ApplyTypeId_BigId,ApplyTypeId_SmallId,ApplyTypeId_BigName,ApplyTypeId_SmallName,ApplyTableUrl");
 			strSql.Append(" FROM Dic_ApplyType ");
 			if(strWhere.Trim()!="")
 			{
@@ -128,11 +132,15 @@ namespace FundApply.DAL
         /// <summary>
         /// 获得数据列表
         /// </summary>
-        public DataSet GetList()
+        public DataSet GetListBig(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select distinct ApplyTypeId_BigId,ApplyTypeId_BigName ");
-            strSql.Append(" FROM Dic_ApplyType ");        
+            strSql.Append(" FROM Dic_ApplyType ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
             return DbHelperSQL.Query(strSql.ToString());
         }
 

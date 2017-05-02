@@ -9,7 +9,10 @@
     <link href="../../css/style.css" rel="stylesheet" />
     <link href="../../css/buttons.css" rel="stylesheet" />
     <script src="../../js/jquery-1.8.3.min.js"></script>
+    <script src="../../js/jquery-1.8.3.min.js"></script>
+    <link href="../../js/plug/layer/skin/default/layer.css" rel="stylesheet" />
     <script src="../../js/plug/layer/layer.js"></script>
+    <script src="../../js/plug/layer/Jquery.CBD.js"></script>
     <style>
         a {
             color: blue;
@@ -17,13 +20,16 @@
         }
     </style>
     <script type="text/javascript">
+         var $data = { userId: '<%=(Session["UsersModel"] as FundApply.Model.UsersModel).Id%>' };
+        $data = JSON.stringify($data);
         $.ajax({
             type: 'post',
             url: '<%=Request.Path%>/ExistsProject',
             contentType: "application/json; charset=utf-8",
             dataType: "json",
+            data: $data,
             success: function (r) {
-                if (r.d) {
+                if (r.d=="true") {
                     $("#dvFirst").css("display", "none");
                     $("#dvSecond").css("display", "block");
                 } else {
@@ -32,7 +38,7 @@
                 }
             },
             error: function (err) {
-                alert(err);
+                //console.log(err);
             }
         });
     </script>
@@ -75,8 +81,9 @@
                     <td><%=projectApplyModelList[i].ProjectState %></td>
                     <td><%=projectApplyModelList[i].CreateTime.ToString("yyyy-MM-dd") %></td>
                     <td style="text-align:center;">
-                        <a href="javascript:void(0);" onclick="Edit(<%=i %>);">修改</a>
-                        <a href="javascript:void(0);" onclick="Del(<%=i %>);">删除</a>
+                        <a href="javascript:void(0);" onclick="Edit(<%=projectApplyModelList[i].Id %>);">修改</a>
+                        <a href="javascript:void(0);" onclick="Del(<%=projectApplyModelList[i].Id %>);">删除</a>
+                                                <a href="javascript:void(0);" onclick="Search(<%=projectApplyModelList[i].Id %>);">cakan</a>
                     </td>
                 </tr>
                 <%} %>
@@ -112,7 +119,7 @@
                 <td><%=projectApplyModelList[i].ProjectState %></td>
                 <td><%=projectApplyModelList[i].CreateTime.ToString("yyyy-MM-dd") %></td>
                 <td>
-                    <a href="javascript:void(0);" onclick="Search(<%=i %>);">详情</a>
+                    <a href="javascript:void(0);" onclick="Search(<%=projectApplyModelList[i].Id %>);">详情</a>
                 </td>
             </tr>
             <%}
@@ -130,6 +137,7 @@
 <script type="text/javascript">
     //添加
     function Add() {
+
         layer.open({
             type: 2,
             title: false,
@@ -142,8 +150,34 @@
         });
     }
 
+    function Del(id) {
+        layer.confirm('您是确定要删除吗？', {
+            btn: ['确定', '取消'] //按钮
+        }, function () {
+
+            $.ajax({
+            type: 'post',
+            url: '<%=Request.Path%>/Del',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify({ id: id}),
+            success: function (r) {
+                if (r.d) {
+                    layer.alert('已删除！');
+                    location.reload();
+                }
+            },
+            error: function (err) {
+                layer.alert('删除失败！');
+            }
+            });
+        }, function () {
+
+        });
+    }
+
     //对行进行操作 编辑 
-    function Edit() {
+    function Edit(id) {
         layer.open({
             type: 2,
             title: false,
@@ -152,12 +186,12 @@
             shade: false,
             maxmin: false,
             area: ['100%', '100%'],
-            content: 'EditProject.aspx'
+            content: 'EditProject.aspx?id='+id
         });
     }
 
     //对行进行操作 查看 
-    function Search() {
+    function Search(id) {
         layer.open({
             type: 2,
             title: false,
@@ -166,7 +200,7 @@
             shade: false,
             maxmin: false,
             area: ['100%', '100%'],
-            content: 'ProjectDetails.aspx'
+            content: 'ProjectDetails.aspx?id='+id
         });
     }
 </script>

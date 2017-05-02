@@ -1,5 +1,6 @@
 ﻿using FundApply.BLL;
 using FundApply.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,66 +19,80 @@ namespace FundApply.Project_Entprise
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                InitWeb();
-            }
-        }
-        public void InitWeb()
+        }    
+
+        [WebMethod]
+        public static string InitData(string userId)
         {
-            UsersModel usersModel = Session["UsersModel"] as UsersModel;
-            txtNat_Org_Code.Value = usersModel.Nat_Org_Code;
-            txtCompany.Value = usersModel.Company;
-            //行业下拉框
-            Dic_IndustryBll dic_IndustryBll = new Dic_IndustryBll();
-            List<Dic_IndustryModel> Dic_IndustryList = new List<Dic_IndustryModel>();
-            drpIndustryId.DataTextField = "IndustryName";
-            drpIndustryId.DataValueField = "IndustryId";
-            drpIndustryId.DataSource = dic_IndustryBll.GetModelList("1=1");
-            drpIndustryId.DataBind();
-
-            //申请类型 二级联动
-            drpApplyTypeBig.DataTextField = "ApplyTypeId_BigName";
-            drpApplyTypeBig.DataValueField = "ApplyTypeId_BigId";
-            drpApplyTypeBig.DataSource = dic_ApplyTypeBll.GetModelList();//
-            drpApplyTypeBig.DataBind();
-
-            drpApplyTypeSmall.DataTextField = "ApplyTypeId_SmallName";
-            drpApplyTypeSmall.DataValueField = "ApplyTypeId_SmallId";
-            drpApplyTypeSmall.DataSource = dic_ApplyTypeBll.GetModelList(string.Format("ApplyTypeId_BigId={0}", drpApplyTypeBig.SelectedValue));//
-            drpApplyTypeSmall.DataBind();
+            ProjectApplyBll projectApplyBll = new ProjectApplyBll();
+            ProjectApplyModel model = projectApplyBll.GetModel(int.Parse(userId));
+            return JsonConvert.SerializeObject(model);
         }
-
-        protected void btnSubmit_Click(object sender, EventArgs e)
+        [WebMethod]
+        public static string AddApplyProject(string UserId,
+            string Nat_Org_Code, string Company, string IndustryId, string YYSR, string TAX,
+            string Employee, string RegAddress, string BusinessAddress, string TaxAddress, string ApplyTypeId, string ApplyFund,
+            string ApplyTable, string Attachment, string Remarks, string ProjectLinkMan, string ProjectPosition, string ProjectMobilPhone, string ProjectEmail)
         {
-            int id = (Session["UsersModel"] as UsersModel).Id;
+            //添加项目
+            ProjectApplyBll projectApplyBll = new ProjectApplyBll();
             ProjectApplyModel projectApplyModel = new ProjectApplyModel();
-            projectApplyModel.UserId = id;
-            projectApplyModel.Company = txtCompany.Value;
-            projectApplyModel.IndustryId = int.Parse(drpIndustryId.SelectedValue);
-            projectApplyModel.YYSR = decimal.Parse(txtYYSR.Value);
-            projectApplyModel.TAX = decimal.Parse(txtYYSR.Value);
-            projectApplyModel.Employee = int.Parse(txtEmployee.Value);
-            projectApplyModel.RegAddress = txtRegAddress.Value;
-            projectApplyModel.BusinessAddress = txtBusinessAddress.Value;
-            projectApplyModel.ApplyTypeId = int.Parse(drpApplyTypeSmall.SelectedValue);
-            projectApplyModel.ApplyFund = decimal.Parse(txtApplyFund.Value);
-            projectApplyModel.Attachment = txtAttachment.FileName;
-            projectApplyModel.ProjectLinkMan = txtProjectLinkMan.Value;
-            projectApplyModel.ProjectPosition = txtProjectPosition.Value;
-            projectApplyModel.ProjectMobilPhone = txtProjectMobilPhone.Value;
-            projectApplyModel.ProjectEmail = txtProjectEmail.Value;
+            projectApplyModel.UserId = int.Parse(UserId);
+            projectApplyModel.Company = Company;
+            projectApplyModel.IndustryId = int.Parse(IndustryId);
+            projectApplyModel.YYSR = decimal.Parse(YYSR);
+            projectApplyModel.TAX = decimal.Parse(TAX);
+            projectApplyModel.Employee = int.Parse(Employee);
+            projectApplyModel.RegAddress = RegAddress;
+            projectApplyModel.BusinessAddress = BusinessAddress;
+            projectApplyModel.TaxAddress = TaxAddress;
+            projectApplyModel.ApplyTypeId = int.Parse(ApplyTypeId);
+            projectApplyModel.ApplyFund = decimal.Parse(ApplyFund);
+            projectApplyModel.ApplyTable = ApplyTable;
+            projectApplyModel.Attachment = Attachment;
+            projectApplyModel.Remarks = Remarks;
+            projectApplyModel.ProjectLinkMan = ProjectLinkMan;
+            projectApplyModel.ProjectPosition = ProjectPosition;
+            projectApplyModel.ProjectMobilPhone = ProjectMobilPhone;
+            projectApplyModel.ProjectEmail = ProjectEmail;
             projectApplyModel.ProjectState = 1;
             projectApplyModel.ApprovalFund = 0;
             projectApplyModel.ApprovalState = 1;
             projectApplyModel.CreateTime = DateTime.Now;
-            projectApplyModel.UpdateTime = DateTime.Now;
+            projectApplyModel.UpdateTime = DateTime.Now;           
             try
             {
                 int i = projectApplyBll.Add(projectApplyModel);
-                if (i > 0)
+
+                //添加项目 审核意见项
+                ProjectApply_CheckModel projectApply_CheckModel = new ProjectApply_CheckModel();
+                ProjectApply_CheckBll projectApply_CheckBll = new ProjectApply_CheckBll();
+                projectApply_CheckModel.ProjectApplyId = projectApplyBll.GetMaxId()-1;
+                projectApply_CheckModel.CheckState = 1;
+                projectApply_CheckModel.CheckOpinion = null;
+                projectApply_CheckModel.UserIdChecker = null;
+                projectApply_CheckModel.CheckTime = null;
+                projectApply_CheckModel.CreateTime = DateTime.Now;
+                int j = projectApply_CheckBll.Add(projectApply_CheckModel);
+                //添加项目  修改内容项
+                ProjectApply_ModifyContentModel projectApply_ModifyContentModel = new ProjectApply_ModifyContentModel();
+                ProjectApply_ModifyContentBll projectApply_ModifyContentBll = new ProjectApply_ModifyContentBll();
+                projectApply_ModifyContentModel.ProjectApplyId = projectApplyBll.GetMaxId()-1;
+                projectApply_ModifyContentModel.ModifyOpinion = null;
+                projectApply_ModifyContentModel.ModifyContent = null;
+                projectApply_ModifyContentModel.ContentBefore = null;
+                projectApply_ModifyContentModel.ContentAfter = null;
+                projectApply_ModifyContentModel.CreateTime = DateTime.Now;
+                projectApply_ModifyContentModel.UpdateTime = DateTime.Now;
+                int k = projectApply_ModifyContentBll.Add(projectApply_ModifyContentModel);
+
+                if (i > 0 & j > 0 & k > 0)
                 {
-                    Response.Write("<script>alert('添加申报成功');</script>");
+                    return "ok";
+                }
+                else
+                {
+                    return "no";
                 }
             }
             catch (Exception)
@@ -85,6 +100,7 @@ namespace FundApply.Project_Entprise
 
                 throw;
             }
+
         }
     }
 }

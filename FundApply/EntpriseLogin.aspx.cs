@@ -79,7 +79,7 @@ namespace FundApply
                     string password = Request.Params["Password"];
                     var usersModelL = usersBll.GetModel(nat_Org_Code, password);
                     Session["UsersModel"] = usersModelL;
-                    Response.Write("<script>alert('注册成功！'); window.location.href = 'parentmain.aspx';</script>");
+                    Response.Write("<script>alert('注册成功！'); window.location.href = 'Project_Entprise" + "/" + "parentmain.aspx';</script>");
                 }
             }
             catch (Exception)

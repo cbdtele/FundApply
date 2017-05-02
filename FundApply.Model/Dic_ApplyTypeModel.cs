@@ -31,6 +31,7 @@ namespace FundApply.Model
 		private int _applytypeid_smallid;
 		private string _applytypeid_bigname;
 		private string _applytypeid_smallname;
+        private string _applyTableUrl;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -71,6 +72,12 @@ namespace FundApply.Model
 			set{ _applytypeid_smallname=value;}
 			get{return _applytypeid_smallname;}
 		}
+
+        public string ApplyTableUrl
+        {
+            set { _applyTableUrl = value; }
+            get { return _applyTableUrl; }
+        }
         #endregion Model
 
 

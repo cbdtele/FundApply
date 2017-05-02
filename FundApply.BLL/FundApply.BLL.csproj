@@ -42,6 +42,8 @@
     <Compile Include="Dic_ApplyTypeBll.cs" />
     <Compile Include="Dic_IndustryBll.cs" />
     <Compile Include="ProjectApplyBll.cs" />
+    <Compile Include="ProjectApply_CheckBll.cs" />
+    <Compile Include="ProjectApply_ModifyContentBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsersBll.cs" />
   </ItemGroup>

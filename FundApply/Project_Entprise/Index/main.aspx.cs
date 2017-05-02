@@ -19,17 +19,18 @@ namespace FundApply.Project_Entprise.Index
         {
             if (!IsPostBack)
             {
-                projectApplyModelList = projectApplyBll.GetModelList(string.Format("UserId=1"));
-                projectApplytHistoryModelLis = projectApplyBll.GetModelList(string.Format("UserId=1 and datediff(year,CreateTime,GETDATE())!=0 "));
+                int userId = (Session["UsersModel"] as FundApply.Model.UsersModel).Id;
+                projectApplyModelList = projectApplyBll.GetModelList(string.Format("UserId={0}", userId));
+                projectApplytHistoryModelLis = projectApplyBll.GetModelList(string.Format("UserId={0} and datediff(year,CreateTime,GETDATE())!=0 ",userId));
             }
         }
 
 
         [WebMethod]
-        public static string ExistsProject()
+        public static string ExistsProject(string userId)
         {
             ProjectApplyBll projectApplyBll = new ProjectApplyBll();
-            bool result = projectApplyBll.ExistsProject(1);
+            bool result = projectApplyBll.ExistsProject(int.Parse(userId));
             if (result)
             {
                 return "true";
@@ -38,6 +39,38 @@ namespace FundApply.Project_Entprise.Index
             {
                 return "false";
             }
+        }
+
+        [WebMethod]
+        public static string Del(string id)
+        {
+            ProjectApplyBll projectApplyBll = new ProjectApplyBll();
+            ProjectApply_CheckBll projectApply_CheckBll = new ProjectApply_CheckBll();
+            ProjectApply_ModifyContentBll projectApply_ModifyContent = new ProjectApply_ModifyContentBll();
+            //int projectApplyId = projectApplyBll.GetModel(id).Id;
+            try
+            {
+                int projectApplyId = int.Parse(id);
+                bool result = projectApplyBll.Delete(projectApplyId);
+                bool resultCheck = projectApply_CheckBll.DeleteByProjectApplyId(projectApplyId);
+                bool resultModifyContent = projectApply_ModifyContent.DeleteByProjectApplyId(projectApplyId);
+
+                if (result)
+                {
+                    return "true";
+                }
+                else
+                {
+                    return "false";
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
         }
     }
 }
